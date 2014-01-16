@@ -91,9 +91,10 @@
 
     <!-- TRDS -->
     <header
-        android:id="@+id/trds_settings"
-        android:icon="@drawable/ic_settings_backup"
-        android:title="@string/trds_settings_title" />
+        android:id="@+id/theme_settings"
+        android:fragment="com.android.settings.slim.themes.ThemeSettings"
+        android:icon="@drawable/ic_settings_theme"
+        android:title="@string/theme_settings_title" />
 
     <!-- INTERFACE -->
     <header android:title="@string/header_category_interface" />
@@ -298,6 +299,13 @@
             android:targetPackage="eu.chainfire.supersu"
             android:targetClass="eu.chainfire.supersu.MainActivity" />
     </header>
+
+    <!-- Superuser -->
+    <header
+        android:id="@+id/superuser"
+        android:fragment="com.android.settings.carbon.superuser.PolicyNativeFragment"
+        android:icon="@drawable/ic_action_permission"
+        android:title="@string/superuser" />
 
     <!-- Date & Time -->
     <header

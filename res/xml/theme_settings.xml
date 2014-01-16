@@ -1,5 +1,9 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2014 The CyanogenMod Project
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2013 SlimRoms (blk_jack)
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -100,4 +104,15 @@
                     android:value="mods_alarms,mods_ringtones,mods_notifications"/>
         </intent>
     </Preference>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/theme_settings_title">
+
+    <ListPreference
+        android:key="pref_theme_auto_mode"
+        android:entries="@array/theme_auto_mode_entries"
+        android:entryValues="@array/theme_auto_mode_values"
+        android:title="@string/theme_auto_mode_title"
+        android:dialogTitle="@string/theme_auto_mode_title" />
+
 </PreferenceScreen>
