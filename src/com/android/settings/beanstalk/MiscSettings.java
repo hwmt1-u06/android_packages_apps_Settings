@@ -86,7 +86,7 @@ public class MiscSettings extends SettingsPreferenceFragment
                 Settings.System.DISABLE_FC_NOTIFICATIONS, true));
                 
         mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
-        mStatusBarSixBarSignal.setChecked((Settings.System.getInt(resolver,
+        mStatusBarSixBarSignal.setChecked((Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.STATUSBAR_6BAR_SIGNAL, 0) == 1));               
     }
 
