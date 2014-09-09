@@ -160,7 +160,17 @@
     <!-- Lockscreen lock icon values -->
     <string-array name="lock_icon_entries">
         <item>@string/lockscreen_lock_icon_custom</item>
-        <item>@string/lockscreen_lock_icon_beanstalk</item>
+        <item>@string/lockscreen_lock_icon_bs</item>
+        <item>@string/lockscreen_lock_icon_bs_one</item>
+        <item>@string/lockscreen_lock_icon_bs_two</item>
+        <item>@string/lockscreen_lock_icon_bs_three</item>
+        <item>@string/lockscreen_lock_icon_bs_four</item>
+        <item>@string/lockscreen_lock_icon_bs_five</item>
+        <item>@string/lockscreen_lock_icon_bs_six</item>
+        <item>@string/lockscreen_lock_icon_bs_seven</item>
+        <item>@string/lockscreen_lock_icon_bs_eight</item>
+        <item>@string/lockscreen_lock_icon_bs_nine</item>
+        <item>@string/lockscreen_lock_icon_bs_ten</item>
         <item>@string/lockscreen_lock_icon_default</item>
     </string-array>
 
@@ -168,6 +178,16 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
     </string-array>
 
     <!-- Icon type for lockscreen shorcut. -->
