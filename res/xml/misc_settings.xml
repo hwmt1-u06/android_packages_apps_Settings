@@ -55,6 +55,12 @@
             android:key="disable_fc_notifications"
             android:title="@string/disable_fc_notifications_title"
             android:summary="@string/disable_fc_notifications_summary" />
+ 
+    <CheckBoxPreference           
+            android:key="statusbar_6bar_signal"
+            android:title="@string/status_bar_six_bar_signal_title"
+            android:summary="@string/status_bar_six_bar_signal_summary"
+            android:persistent="false" />
 
     <PreferenceScreen
 	android:key="lcd_density_setup"

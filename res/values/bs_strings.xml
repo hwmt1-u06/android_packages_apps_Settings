@@ -1891,6 +1891,10 @@
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Diable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
+ 
+    <!-- Text for Enabling 6 Bar Signal -->    
+    <string name="status_bar_six_bar_signal_title">Enable Six Bar Signal</string>
+    <string name="status_bar_six_bar_signal_summary">Enable to show six bar signal in statusbar/qs</string>
 	
     <!-- Toggle switch title for enabling battery saver connections. [CHAR LIMIT=32] -->
     <string name="data_usage_enable_batterysaver">Battery saver</string>
