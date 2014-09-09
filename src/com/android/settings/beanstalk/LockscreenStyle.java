@@ -456,7 +456,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLockten != null) {
             String path = null;
             int px = requestImageSize();
-            bsLockten = Bitmap.createScaledBitmap(duLockten, px, px, true);
+            bsLockten = Bitmap.createScaledBitmap(bsLockten, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -488,7 +488,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLocknine != null) {
             String path = null;
             int px = requestImageSize();
-            bsLocknine = Bitmap.createScaledBitmap(duLocknine, px, px, true);
+            bsLocknine = Bitmap.createScaledBitmap(bsLocknine, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -520,7 +520,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLockeight != null) {
             String path = null;
             int px = requestImageSize();
-            bsLockeight = Bitmap.createScaledBitmap(duLockeight, px, px, true);
+            bsLockeight = Bitmap.createScaledBitmap(bsLockeight, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -552,7 +552,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLockseven != null) {
             String path = null;
             int px = requestImageSize();
-            bsLockseven = Bitmap.createScaledBitmap(duLockseven, px, px, true);
+            bsLockseven = Bitmap.createScaledBitmap(bsLockseven, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -584,7 +584,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLocksix != null) {
             String path = null;
             int px = requestImageSize();
-            bsLocksix = Bitmap.createScaledBitmap(duLocksix, px, px, true);
+            bsLocksix = Bitmap.createScaledBitmap(bsLocksix, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -616,7 +616,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLockfive != null) {
             String path = null;
             int px = requestImageSize();
-            bsLockfive = Bitmap.createScaledBitmap(duLockfive, px, px, true);
+            bsLockfive = Bitmap.createScaledBitmap(bsLockfive, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -648,7 +648,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLockfour != null) {
             String path = null;
             int px = requestImageSize();
-            bsLockfour = Bitmap.createScaledBitmap(duLockfour, px, px, true);
+            bsLockfour = Bitmap.createScaledBitmap(bsLockfour, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -680,7 +680,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLockthree != null) {
             String path = null;
             int px = requestImageSize();
-            bsLockthree = Bitmap.createScaledBitmap(duLockthree, px, px, true);
+            bsLockthree = Bitmap.createScaledBitmap(bsLockthree, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -712,7 +712,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         if (bsLocktwo != null) {
             String path = null;
             int px = requestImageSize();
-            bsLocktwo = Bitmap.createScaledBitmap(duLocktwo, px, px, true);
+            bsLocktwo = Bitmap.createScaledBitmap(bsLocktwo, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -740,11 +740,11 @@ public class LockscreenStyle extends SettingsPreferenceFragment
     }
 
     private void resizeBsLockone() {
-        Bitmap duLockone = BitmapFactory.decodeResource(getResources(), R.drawable.bs_lock_one);
+        Bitmap bsLockone = BitmapFactory.decodeResource(getResources(), R.drawable.bs_lock_one);
         if (bsLockone != null) {
             String path = null;
             int px = requestImageSize();
-            bsLockone = Bitmap.createScaledBitmap(duLockone, px, px, true);
+            bsLockone = Bitmap.createScaledBitmap(bsLockone, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -772,7 +772,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
     }
 
     private void resizeBsLock() {
-        Bitmap duLock = BitmapFactory.decodeResource(getResources(), R.drawable.bs_lock);
+        Bitmap bsLock = BitmapFactory.decodeResource(getResources(), R.drawable.bs_lock);
         if (bsLock != null) {
             String path = null;
             int px = requestImageSize();
