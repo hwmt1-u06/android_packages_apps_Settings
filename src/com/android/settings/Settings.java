@@ -866,7 +866,6 @@ public class Settings extends PreferenceActivity
 
         private final WifiEnabler mWifiEnabler;
         private final BluetoothEnabler mBluetoothEnabler;
-        public static ThemeEnabler mThemeEnabler;
         private final ProfileEnabler mProfileEnabler;
         private final TRDSEnabler mTRDSEnabler;
         private AuthenticatorHelper mAuthHelper;
@@ -888,7 +887,6 @@ public class Settings extends PreferenceActivity
                 return HEADER_TYPE_CATEGORY;
             } else if (header.id == R.id.wifi_settings
                     || header.id == R.id.bluetooth_settings
-                    || header.id == R.id.theme_settings
                     || header.id == R.id.profiles_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.wifi_settings || header.id == R.id.bluetooth_settings || header.id == R.id.trds_settings) {
@@ -937,7 +935,6 @@ public class Settings extends PreferenceActivity
             // Switches inflated from their layouts. Must be done before adapter is set in super
             mWifiEnabler = new WifiEnabler(context, new Switch(context));
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
-            mThemeEnabler = new ThemeEnabler(context, new Switch(context));
             mProfileEnabler = new ProfileEnabler(context, new Switch(context));
             mDevicePolicyManager = dpm;
             mTRDSEnabler = new TRDSEnabler(context, new Switch(context));
@@ -1011,8 +1008,6 @@ public class Settings extends PreferenceActivity
                         mWifiEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.bluetooth_settings) {
                         mBluetoothEnabler.setSwitch(holder.switch_);
-                    } else if (header.id == R.id.theme_settings) {
-                        mThemeEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.profiles_settings) {
                         mProfileEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.trds_settings) {
@@ -1096,7 +1091,6 @@ public class Settings extends PreferenceActivity
         public void resume() {
             mWifiEnabler.resume();
             mBluetoothEnabler.resume();
-            mThemeEnabler.resume();
             mProfileEnabler.resume();
             mTRDSEnabler.resume();
         }
@@ -1104,7 +1098,6 @@ public class Settings extends PreferenceActivity
         public void pause() {
             mWifiEnabler.pause();
             mBluetoothEnabler.pause();
-            mThemeEnabler.resume();
             mProfileEnabler.pause();
             mTRDSEnabler.pause();
         }
@@ -1260,5 +1253,4 @@ public class Settings extends PreferenceActivity
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class PerformanceSettingsActivity extends Settings { /* empty */ }
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
-    public static class ThemeSettingsActivity extends Settings { /* empty */ }
 }

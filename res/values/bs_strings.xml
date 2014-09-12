@@ -1788,17 +1788,6 @@
     <string name="background_result_successful">Background changed</string>
     <string name="background_result_not_successful">Background not changed</string>
 
-    <!-- Theme chooser -->
-    <string name="themes_settings_title">Themes</string>
-    <string name="themepacks_settings_title">Theme Packs</string>
-    <string name="styles_settings_title">Styles</string>
-    <string name="icons_settings_title">Icons</string>
-    <string name="fonts_settings_title">Fonts</string>
-    <string name="wallpaper_settings_title">Wallpapers</string>
-    <string name="lockscreen_wallpaper_settings_title">Lock screen Wallpapers</string>
-    <string name="bootanim_settings_title">Boot Animations</string>
-    <string name="soundpack_settings_title">Sound Packs</string>
-
     <!-- Scrolling Animation Controls -->
     <string name="scrolling_title">Scrolling modifiers</string>
     <string name="scrolling_summary">View or change scrolling animations</string>

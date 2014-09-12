@@ -1737,8 +1737,8 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-    
-        <!-- Identicons -->
+
+    <!-- Identicons -->
     <string-array name="identicons_style_entries" translatable="false">
         <item>@string/identicons_style_retro</item>
         <item>@string/identicons_style_contemporary</item>
