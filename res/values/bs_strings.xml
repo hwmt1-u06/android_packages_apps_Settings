@@ -454,6 +454,7 @@
 
     <!-- TRDS Settings -->
     <string name="trds_settings_title">Dark stalk</string>
+    <string name="trds_default_color">TRDS default</string>
 
     <!-- Donate to BeanStalk Builds -->
     <string name="donate_beanstalk_title">Support BeanStalk</string>
