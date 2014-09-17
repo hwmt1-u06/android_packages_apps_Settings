@@ -14,6 +14,8 @@
 
  package com.android.settings.beanstalk;
   
+  import android.app.AlertDialog;
+  import android.content.DialogInterface;
   import android.content.pm.PackageManager;
   import android.content.res.Resources;
   import android.media.Ringtone;
