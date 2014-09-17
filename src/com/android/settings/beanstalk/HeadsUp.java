@@ -18,6 +18,9 @@
   import android.content.res.Resources;
   import android.media.Ringtone;
   import android.media.RingtoneManager;
+  import android.view.Menu;
+  import android.view.MenuItem;
+  import android.view.MenuInflater;
   import android.net.Uri;
   import android.os.Bundle;
   import android.preference.CheckBoxPreference;
@@ -36,6 +39,8 @@
   import com.android.settings.SettingsPreferenceFragment;
   import com.android.settings.beanstalk.quicksettings.QuickSettingsUtil;
   import com.android.settings.R;
+  
+  import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class HeadsUp extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -50,6 +55,11 @@ public class HeadsUp extends SettingsPreferenceFragment implements
     private static final String PREF_HEADS_UP_SHOW_UPDATE = "heads_up_show_update";
     private static final String PREF_HEADS_UP_GRAVITY = "heads_up_gravity";
     private static final String PREF_HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN = "heads_up_exclude_from_lock_screen";
+	
+    private static final String HEADS_UP_BG_COLOR = "heads_up_bg_color";
+    private ColorPickerPreference mHeadsUpBgColor;	
+	private static final int MENU_RESET = Menu.FIRST;
+    private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
 
     ListPreference mHeadsUpSnoozeTime;
     ListPreference mHeadsUpTimeOut;
@@ -116,6 +126,22 @@ public class HeadsUp extends SettingsPreferenceFragment implements
                 Settings.System.HEADS_UP_NOTIFCATION_DECAY, defaultTimeOut);
         mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
         updateHeadsUpTimeOutSummary(headsUpTimeOut);
+		
+		        // Heads Up background color
+        mHeadsUpBgColor =
+                (ColorPickerPreference) findPreference(HEADS_UP_BG_COLOR);
+        mHeadsUpBgColor.setOnPreferenceChangeListener(this);
+        final int intColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_BG_COLOR, 0x00ffffff);
+        String hexColor = String.format("#%08x", (0x00ffffff & intColor));
+        if (hexColor.equals("#00ffffff")) {
+            mHeadsUpBgColor.setSummary(R.string.trds_default_color);
+        } else {
+            mHeadsUpBgColor.setSummary(hexColor);
+        }
+        mHeadsUpBgColor.setNewPreviewColor(intColor);
+
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -164,6 +190,19 @@ public class HeadsUp extends SettingsPreferenceFragment implements
                     Settings.System.HEADS_UP_GRAVITY_BOTTOM,
                     (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
+	    } else if (preference == mHeadsUpBgColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#00ffffff")) {
+                preference.setSummary(R.string.trds_default_color);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.HEADS_UP_BG_COLOR,
+                    intHex);
+            return true;
         } else if (preference == mHeadsExcludeFromLockscreen) {
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN,
@@ -194,5 +233,42 @@ public class HeadsUp extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+	    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_RESET, 0, R.string.reset_default_message)
+                .setIcon(R.drawable.ic_settings_backup)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_RESET:
+                resetToDefault();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void resetToDefault() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle(R.string.shortcut_action_reset);
+        alertDialog.setMessage(R.string.qs_style_reset_message);
+        alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                resetValues();
+            }
+        });
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.create().show();
+    }
+
+    private void resetValues() {
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.HEADS_UP_BG_COLOR, DEFAULT_BACKGROUND_COLOR);
+        mHeadsUpBgColor.setNewPreviewColor(DEFAULT_BACKGROUND_COLOR);
+        mHeadsUpBgColor.setSummary(R.string.trds_default_color);
     }
 }
