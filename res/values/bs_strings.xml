@@ -2175,6 +2175,7 @@
    <string name="heads_up_floating_window_summary">Open heads up in floating window</string>
    <string name="heads_up_exclude_from_lock_screen_title">Disable on lock screen</string>
    <string name="heads_up_exclude_from_lock_screen_summary">Hide notifications on lock screen</string>
+   <string name="heads_up_bg_color_title">Background color</string>
 
     <!-- Weather -->
     <string name="weather_settings_title">Weather</string>
