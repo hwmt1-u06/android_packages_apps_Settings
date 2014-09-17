@@ -1135,6 +1135,7 @@
     <string name="title_tile_wifiap">Wi-Fi AP</string>
     <string name="title_tile_wifi">Wi-Fi</string>
     <string name="title_tile_user">User switcher</string>
+    <string name="title_tile_network_adb">ADB over network</string>
     <string name="title_tile_networkmode">Network mode</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Screen timeout</string>
@@ -1583,7 +1584,9 @@
     <string name="recents_panel_color_summary">Select panel color.  Restarts SystemUI</string>
     <string name="recent_panel_show_topmost_title">Show topmost task</string>
     <string name="recent_panel_show_topmost_summary">Don\'t exclude the topmost task in recents view</string>
-    <string name="recent_panel_bg_color_title">Background color</string>
+    <string name="recent_panel_bg_color_title">Panel background color</string>
+    <string name="recent_card_bg_color_title">Card background color</string>
+    <string name="recent_card_text_color_title">Card text color</string>
     <string name="reset_default_message">Reset default</string>
     <string name="large_recent_thumbs_title">Large recent thumbnails</string>
     <string name="large_recent_thumbs_summary">Larger recent thumbnails. Restarts SystemUI</string>
@@ -1776,17 +1779,6 @@
     <string name="toast_Translucent_animation">Translucent Animation</string>
     <string name="toast_SlideLeftRight_animation">Slide Left To Right Animation</string>
     <string name="toast_SlideRightLeft_animation">Slide Right To Left Animation</string>
-
-    <!-- Lockscreen background -->
-    <string name="lockscreen_background">Background</string>
-    <string name="lockscreen_background_style_title">Custom background type</string>
-    <string name="background_color_fill_title">Background color</string>
-    <string name="background_default">Default wallpaper</string>
-    <string name="background_color_fill">Color fill</string>
-    <string name="background_wallpaper">Custom wallpaper</string>
-    <string name="transparency">Background transparency</string>
-    <string name="background_result_successful">Background changed</string>
-    <string name="background_result_not_successful">Background not changed</string>
 
     <!-- Scrolling Animation Controls -->
     <string name="scrolling_title">Scrolling modifiers</string>
@@ -1988,38 +1980,6 @@
     <!-- On-the-Go -->
     <string name="power_menu_onthego_title">On-The-Go Mode</string>
     <string name="title_tile_onthego">On-The-Go</string>
-
-    <!-- Backups -->
-    <!-- Title for the BackupSettings activity and the backups category in InstalledAppDetails -->
-    <string name="backups_title">Backups</string>
-    <!-- Manage applications, label for perform backup button -->
-    <string name="restore_backup">Restore</string>
-    <!-- Manage applications, label for restore backup button -->
-    <string name="create_backup">Backup</string>
-    <!-- Title of the preference select the backup folder -->
-    <string name="backup_location_title">Backup location</string>
-    <!-- Title of the preference to change maximum number of backups kept per package -->
-    <string name="backup_history_title">Backup history</string>
-    <!-- Summary of the preference to change maximum number of backups kept per package -->
-    <string name="backup_history_summary">Maximum number of backups to keep per package.</string>
-    <!-- Title if the dialog to move existing backups to the new location after a new backup location was selected. -->
-    <string name="backup_move_new_location">Move all existing backups to the new location?</string>
-    <!-- Title of the dialog to trim backup history after backup_history preference was changed -->
-    <string name="backup_history_trim">Trim backup history?</string>
-    <!-- Toast message if backup folder is missing -->
-    <string name="backup_location_missing">Backup location is not set or deleted, using default:  %s</string>
-    <!-- Text in the notification displayed while moving backups -->
-    <string name="backup_notification_moving">Moving backups to new location</string>
-    <!-- Text in the notification displayed while deleting backups -->
-    <string name="backup_notification_deleting">Deleting backups</string>
-    <!-- Title of ManageBackupsActivity -->
-    <string name="manage_backups_activity_title">Manage Backups</string>
-    <!-- Description of ManageBackupsActivity -->
-    <string name="manage_backups_activity_description">Create, restore and delete backups</string>
-    <!-- Displayed as a toast in ManageBackupsActivity if a backup is requested, but no app selected -->
-    <string name="no_apps_selected">No apps selected</string>
-    <!-- Displayed as a toast in ManageBackupsActivity if a restore/delete is requested, but no backup selected -->
-    <string name="no_backups_selected">No backups selected</string>
 
     <!-- App moving -->
     <string name="app_moving_enable">Enable app moving</string>
