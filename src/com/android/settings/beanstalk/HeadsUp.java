@@ -55,7 +55,8 @@ public class HeadsUp extends SettingsPreferenceFragment implements
     private static final String PREF_HEADS_UP_SHOW_UPDATE = "heads_up_show_update";
     private static final String PREF_HEADS_UP_GRAVITY = "heads_up_gravity";
     private static final String PREF_HEADS_UP_EXCLUDE_FROM_LOCK_SCREEN = "heads_up_exclude_from_lock_screen";
-	
+
+    // Heads Up Background Color	
     private static final String HEADS_UP_BG_COLOR = "heads_up_bg_color";
     private ColorPickerPreference mHeadsUpBgColor;	
 	private static final int MENU_RESET = Menu.FIRST;

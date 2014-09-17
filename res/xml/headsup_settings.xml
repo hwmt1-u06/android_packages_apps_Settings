@@ -73,4 +73,5 @@
         android:title="@string/heads_up_bg_color_title"
         android:defaultValue="0x00ffffff"
         alphaSlider="true" />
+	
 </PreferenceScreen>
