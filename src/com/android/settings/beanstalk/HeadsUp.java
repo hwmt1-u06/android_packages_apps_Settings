@@ -127,7 +127,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements
         mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
         updateHeadsUpTimeOutSummary(headsUpTimeOut);
 		
-		        // Heads Up background color
+		// Heads Up background color
         mHeadsUpBgColor =
                 (ColorPickerPreference) findPreference(HEADS_UP_BG_COLOR);
         mHeadsUpBgColor.setOnPreferenceChangeListener(this);
@@ -234,6 +234,7 @@ public class HeadsUp extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
+	
 	    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.add(0, MENU_RESET, 0, R.string.reset_default_message)
