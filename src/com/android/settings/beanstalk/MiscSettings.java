@@ -52,7 +52,7 @@ public class MiscSettings extends SettingsPreferenceFragment
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final String PREF_DISABLE_FC_NOTIFICATIONS = "disable_fc_notifications";
-       private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";
+    private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";
 
     private ListPreference mMsob;
     private Preference mCustomLabel;
@@ -85,7 +85,7 @@ public class MiscSettings extends SettingsPreferenceFragment
         mDisableFC.setChecked(Settings.System.getBoolean(mContext.getContentResolver(),
                 Settings.System.DISABLE_FC_NOTIFICATIONS, true));
                 
-        mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
+    mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
         mStatusBarSixBarSignal.setChecked((Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.STATUSBAR_6BAR_SIGNAL, 0) == 1));               
     }
