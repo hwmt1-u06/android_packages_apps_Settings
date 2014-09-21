@@ -2234,6 +2234,11 @@
     <!-- Disable Boot Audio -->
     <string name="disable_bootaudio_title">Disable boot audio</string>
     <string name="disable_bootaudio_summary">Quiet</string>
-    <string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/audio.mp3</string>
-
+    <string name="disable_bootaudio_summary_disabled">To enable boot audio, you must have an MP3 file at \n/system/media/audio.mp3</string>    
+    
+    <!-- Search -->
+    <string name="settings_search_action_bar_button">Search</string>
+    <string name="settings_search_autocompleteview_hint">Search settings</string>
+    <string name="settings_search_loading_text">Loading search data\u2026</string>
+  
 </resources>
