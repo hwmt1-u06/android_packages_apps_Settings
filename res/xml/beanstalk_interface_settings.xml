@@ -22,6 +22,7 @@
         android:title="@string/alerts_and_warnings_title" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/screen_and_animations"
         android:key="screen_and_animations"
         android:fragment="com.android.settings.beanstalk.ScreenAndAnimations"
         android:title="@string/screen_and_animations_title" />
