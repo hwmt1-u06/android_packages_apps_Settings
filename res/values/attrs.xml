@@ -109,6 +109,11 @@
         <attr name="facebookLink" format="string" />
 	<attr name="emailDev" format="string" />
     </declare-styleable>
+    
+    <declare-styleable name="SearchableInfo">
+        <attr name="includeXmlForSearch" format="reference" />
+        <attr name="excludeFromSearch" format="boolean" />
+    </declare-styleable>
 
     <declare-styleable name="ImageListPreference">
         <attr name="summaryImage" format="reference" />
