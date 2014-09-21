@@ -1250,13 +1250,17 @@
     <string name="button_power_key_title">Power button</string>
     <string name="fast_torch_title">Fast torch</string>
     <string name="fast_torch_summary">Enable holding the power button with the screen off to control Torch</string>
-    <string name="performance_settings">Performance control</string>
     <string name="lockscreen_double_tap_sleep_title">Double-tap to sleep</string>
 
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
     <string name="show_cpu_info">Show CPU info</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
+ 
+    <!--Kernel Tweaker-->
+    <string name="kernel_tweaker_title">Performance</string>
+    <string name="statusbar_settings_title">Status bar</string>
+    <string name="performance_settings">Performance control</string>
 
     <!--Lockscreen blur-->
     <string name="lockscreen_misc_title">Misc features</string>
