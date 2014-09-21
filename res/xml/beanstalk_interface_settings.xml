@@ -11,6 +11,7 @@
         android:title="@string/status_bar_title" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/notification_drawer_qs_settings"
         android:key="notification_drawer_qs"
         android:fragment="com.android.settings.beanstalk.NotificationDrawerQsSettings"
         android:title="@string/notification_drawer_qs_title" />
