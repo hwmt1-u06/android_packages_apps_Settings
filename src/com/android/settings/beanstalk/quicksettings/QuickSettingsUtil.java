@@ -62,6 +62,7 @@ import static com.android.internal.util.beanstalk.QSConstants.TILE_REBOOT;
 import static com.android.internal.util.beanstalk.QSConstants.TILE_INTERNALMEMORY;
 import static com.android.internal.util.beanstalk.QSConstants.TILE_FCHARGE;
 import static com.android.internal.util.beanstalk.QSConstants.TILE_ONTHEGO;
+import static com.android.internal.util.beanstalk.QSConstants.TILE_CPUFREQ;
 import static com.android.internal.util.beanstalk.QSConstants.TILE_REMOTEDISPLAY;
 
 import android.content.ContentResolver;
@@ -196,9 +197,12 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_SHAKE, R.string.title_tile_shake,
                 "com.android.systemui:drawable/ic_qs_shake_events"));
-	registerTile(new QuickSettingsUtil.TileInfo(
-		TILE_NETWORKADB, R.string.title_tile_network_adb,
-		"com.android.systemui:drawable/ic_qs_network_adb_off"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_CPUFREQ, R.string.title_tile_cpufreq,
+                "com.android.systemui:drawable/ic_qs_cpufreq"));				
+	    registerTile(new QuickSettingsUtil.TileInfo(
+		        TILE_NETWORKADB, R.string.title_tile_network_adb,
+		        "com.android.systemui:drawable/ic_qs_network_adb_off"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -266,6 +270,10 @@ public class QuickSettingsUtil {
             removeTile(TILE_COMPASS);
         }
 
+        // Don't show the CPUFreq tile if the kernel doesn't support this
+        if (!DeviceUtils.deviceSupportsCPUFreq()) {
+            removeTile(TILE_CPUFREQ);
+        }
     }
 
     public static ArrayList<String> getAllDynamicTiles(Context context) {
