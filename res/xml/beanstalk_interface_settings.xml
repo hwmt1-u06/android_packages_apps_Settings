@@ -18,6 +18,7 @@
         android:title="@string/notification_drawer_qs_title" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/alerts_and_warnings"
         android:key="alerts_and_warnings"
         android:fragment="com.android.settings.beanstalk.AlertsAndWarnings"
         android:title="@string/alerts_and_warnings_title" />
@@ -42,16 +43,19 @@
      </PreferenceScreen>
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/gesture_anywhere"    
         android:key="gesture_anywhere"
         android:fragment="com.android.settings.chameleonos.labs.gestureanywhere.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title" />
 
     <PreferenceScreen
+            settings:includeXmlForSearch="@xml/battery_saver_settings"
             android:fragment="com.android.settings.beanstalk.BatterySaverSettings"
             android:title="@string/battery_saver_title" />
 
     <!-- Driving mode -->
     <PreferenceScreen
+            settings:includeXmlForSearch="@xml/tts_notif_settings"    
 	    android:key="interface_voice_tts"
 	    android:title="@string/voice_tts_title"
 	    android:summary="@string/voice_tts_summary"
@@ -59,16 +63,19 @@
 
         <!-- Weather -->
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/aicp_weather"   
 	android:id="@+id/weather"
 	android:title="@string/weather_settings_title"
 	android:fragment="com.android.settings.aicp.Weather" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/navbar_settings"    
         android:key="navbar_settings"
         android:fragment="com.android.settings.beanstalk.NavbarSettings"
         android:title="@string/navigation_bar" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/pie_control"
         android:key="pie_settings"
         android:fragment="com.android.settings.beanstalk.PieControl"
         android:title="@string/pie_control_title" />
@@ -81,27 +88,32 @@
 	android:title="@string/pa_pie_controls_title" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/shake_event_settings"
         android:key="shake_events"
         android:fragment="com.android.settings.beanstalk.ShakeEvents"
         android:title="@string/shake_events_title" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/propmodder" 
         android:key="buildprop_modder"
         android:title="@string/propmodder_title" 
         android:fragment="com.android.settings.cyanogenmod.PropModder"/>
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/init_d" 
         android:id="@+id/initD"
         android:fragment="com.android.settings.InitD"
         android:title="@string/init_d_title"
         android:summary="@string/header_summary_init_d" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/general_settings"     
         android:key="general_settings"
         android:fragment="com.android.settings.beanstalk.GeneralSettings"
         android:title="@string/general_settings_title" />
 
     <PreferenceScreen
+        settings:includeXmlForSearch="@xml/misc_settings"     
 	android:key="misc_settings"
         android:fragment="com.android.settings.beanstalk.MiscSettings"
         android:title="@string/misc_settings_title" />
