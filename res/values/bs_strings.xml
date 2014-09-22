@@ -1207,6 +1207,10 @@
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
+    
+    <!-- Statusbar Carrier Logo -->
+    <string name="statusbar_carrier_logo_title">Carrier logo statusbar</string>
+    <string name="statusbar_carrier_logo_summary">Show logo based from carrier/provider</string>
 
     <!-- QuickSettings fliptiles -->
     <string name="flip_qs_tiles_title">Flip tiles</string>
