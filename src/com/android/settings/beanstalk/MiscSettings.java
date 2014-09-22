@@ -32,7 +32,6 @@ import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
-import com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceCategory;
 import android.text.Spannable;
@@ -51,14 +50,12 @@ public class MiscSettings extends SettingsPreferenceFragment
 
     private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
-    private static final String TOGGLE_CARRIER_LOGO = "toggle_carrier_logo";	
     private static final String PREF_VIBRATE_NOTIF_EXPAND = "vibrate_notif_expand";
     private static final String PREF_DISABLE_FC_NOTIFICATIONS = "disable_fc_notifications";
     private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";
 
     private ListPreference mMsob;
     private Preference mCustomLabel;
-	private SystemSettingCheckBoxPreference mStatusbarLogo;
     private String mCustomLabelText = null;
     CheckBoxPreference mVibrateOnExpand;
     CheckBoxPreference mDisableFC;
@@ -167,9 +164,4 @@ public class MiscSettings extends SettingsPreferenceFragment
             mCustomLabel.setSummary(mCustomLabelText);
         }
      }
-	 
-        mStatusbarLogo = (SystemSettingCheckBoxPreference) findPreference(STATUSBAR_CARRIER_LOGO);
-        if (Utils.isWifiOnly(getActivity())) {
-        prefSet.removePreference(mStatusbarLogo);
-     }	 
 }

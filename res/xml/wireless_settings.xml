@@ -30,6 +30,7 @@
         android:persistent="false" />
 
     <Preference
+        settings:excludeFromSearch="true"
         android:key="voice_plus"
         android:title="@string/voice_plus_title"
         android:summary="@string/voice_plus_summary"
