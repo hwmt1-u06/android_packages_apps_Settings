@@ -237,11 +237,6 @@ public class Settings extends PreferenceActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // We only want to inflate the search menu item in the top-level activity
-        if (getClass() != Settings.class) {
-            return false;
-        }
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.settings_search, menu);
         mSearchItem = menu.findItem(R.id.action_search);
@@ -273,7 +268,6 @@ public class Settings extends PreferenceActivity
         mSearchBar.setLayoutParams(layoutParams);
         mSearchBar.setHint(R.string.settings_search_autocompleteview_hint);
         mSearchBar.setThreshold(1);
-        mSearchBar.setSingleLine(true);
         mSearchBar.setOnItemClickListener(this);
         mSearchBar.setAdapter(new SettingsSearchFilterAdapter(this));
 
@@ -326,14 +320,15 @@ public class Settings extends PreferenceActivity
             });
         }
 
-        // Override up navigation for multi-pane, since we handle it in the fragment breadcrumbs
-        if (onIsMultiPane()) {
-            getActionBar().setDisplayHomeAsUpEnabled(false);
-            getActionBar().setHomeButtonEnabled(false);
-        }
-
         mActionBar = getActionBar();
-        mActionBar.setDisplayShowCustomEnabled(true);
+        if (mActionBar != null) {
+            // Override up navigation for multi-pane, since we handle it in the fragment breadcrumbs
+            if (onIsMultiPane()) {
+                mActionBar.setDisplayHomeAsUpEnabled(false);
+                mActionBar.setHomeButtonEnabled(false);
+            }
+            mActionBar.setDisplayShowCustomEnabled(true);
+        }
     }
 
     @Override
@@ -410,6 +405,13 @@ public class Settings extends PreferenceActivity
                     mDevelopmentPreferencesListener);
             mDevelopmentPreferencesListener = null;
         }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mSearchBar.clearFocus();
+        mSearchItem.collapseActionView();
     }
 
     @Override
@@ -1268,9 +1270,7 @@ public class Settings extends PreferenceActivity
 
     @Override
     public boolean onPreferenceStartFragment(PreferenceFragment caller, Preference pref) {
-        if (mSearchItem != null) {
-            mSearchItem.collapseActionView();
-        }
+        mSearchItem.collapseActionView();
         // Override the fragment title for Wallpaper settings
         int titleRes = pref.getTitleRes();
         if (pref.getFragment().equals(OwnerInfoSettings.class.getName())
@@ -1309,7 +1309,6 @@ public class Settings extends PreferenceActivity
         mAuthenticatorHelper.onAccountsUpdated(this, accounts);
         invalidateHeaders();
     }
-
 
     public static void requestHomeNotice() {
         sShowNoHomeNotice = true;

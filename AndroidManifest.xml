@@ -2302,8 +2302,7 @@
 
         <service android:name=".chameleonos.labs.identicons.IdenticonRemovalService"
                  android:exported="false" />
-		 
-	<service android:name=".search.SearchPopulator"/>
 
+        <service android:name=".search.SearchPopulator"/>
     </application>
 </manifest>
