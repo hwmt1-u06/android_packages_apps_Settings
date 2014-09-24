@@ -60,7 +60,7 @@
         </intent>
     </Preference>
 
-    <!-- Homescreen Wallpaper -->
+    <!-- Wallpaper -->
     <Preference
         android:key="wallpaper_settings"
         android:title="@string/wallpaper_settings_title"
