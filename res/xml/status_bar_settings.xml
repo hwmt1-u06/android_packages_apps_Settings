@@ -44,6 +44,7 @@
 	<CheckBoxPreference
 	    android:key="toggle_carrier_logo"
 	    android:title="@string/disable_carrier_logo"
+	    android:summary="@string/disable_carrier_logo_summary"
 	    android:defaultValue="true" />
 
     </PreferenceCategory>
