@@ -484,7 +484,8 @@ public class Settings extends PreferenceActivity
         PolicyNativeFragment.class.getName(),
         com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
 	ThemeSettings.class.getName(),
-        ShakeEvents.class.getName()
+        ShakeEvents.class.getName(),
+	com.android.settings.wifi.WifiApSettings.class.getName()
     };
 
     @Override
@@ -1386,4 +1387,5 @@ public class Settings extends PreferenceActivity
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
+    public static class WifiApSettingsActivity extends Settings { /* empty */ }
 }

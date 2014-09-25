@@ -109,11 +109,6 @@
         <attr name="facebookLink" format="string" />
 	<attr name="emailDev" format="string" />
     </declare-styleable>
-    
-    <declare-styleable name="SearchableInfo">
-        <attr name="includeXmlForSearch" format="reference" />
-        <attr name="excludeFromSearch" format="boolean" />
-    </declare-styleable>
 
     <declare-styleable name="ImageListPreference">
         <attr name="summaryImage" format="reference" />
@@ -158,5 +153,10 @@
         <attr name="maximum" format="integer" />
         <attr name="minimum" format="integer" />
         <attr name="interval" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SearchableInfo">
+        <attr name="includeXmlForSearch" format="reference" />
+        <attr name="excludeFromSearch" format="boolean" />
     </declare-styleable>
 </resources>
