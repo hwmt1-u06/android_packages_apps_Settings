@@ -649,19 +649,6 @@
     <string name="ad_annoying_summary">Limit the notification to once per time period</string>
     <string name="ad_double_tap_title">Double tap to sleep</string>
     <string name="ad_double_tap_summary">Turn screen off with double tap</string>
-    <string name="ad_shake_event_settings_title">Shake settings</string>
-    <string name="ad_shake_event_title">Shake to redisplay</string>
-    <string name="ad_shake_event_summary">Shake device to redisplay notifications</string>
-    <string name="ad_shake_force_title">Default event</string>
-    <string name="ad_shake_force_summary">After receive a notification won\'t run active display until user shakes</string>
-    <string name="ad_shake_threshold_title">Intensity</string>
-    <string name="ad_shake_threshold_summary">Intensity of shake needed to display notifications</string>
-    <string name="ad_shake_timeout_title">Timeout</string>
-    <string name="ad_shake_timeout_summary">Seconds that shake is active after receiving a notification, 0 means always active.</string>
-    <string name="ad_shake_quiet_hours_title">Bypass Quiet Hours</string>
-    <string name="ad_shake_quiet_hours_summary">Allow shake during Quiet Hours</string>
-    <string name="ad_shake_long_threshold_title">Interval</string>
-    <string name="ad_shake_long_threshold_summary">Minimum time between consecutive shakes</string>
     <string name="ad_all_notifications_title">Show ongoing</string>
     <string name="ad_all_notifications_summary">Show non-clearable notifications</string>
     <string name="ad_hide_low_priority_title">Hide low priority</string>
@@ -1476,6 +1463,8 @@
     <string name="general">General</string>
     <string name="layout">Layout</string>
     <string name="privacy">Privacy</string>
+
+    <string name="Lockscreen_notifications_header">Lockscreen Notifications</string>
     <string name="lockscreen_notifications">Lockscreen notifications</string>
     <string name="lockscreen_notifications_summary">Show pending notifications on lockscreen</string>
     <string name="pocket_mode">Pocket mode</string>
@@ -1483,13 +1472,13 @@
     <string name="show_always">Show always</string>
     <string name="show_always_summary">Always turn screen on when pulled out of pocket, even when there are no notifications pending</string>
     <string name="hide_low_priority">Hide low priority</string>
-    <string name="hide_low_priority_summary">Hide low priority notifications such as Google Now weather notifications</string>
+    <string name="hide_low_priority_summary">Hide low priority notifications such as google now weather notifications</string>
     <string name="hide_non_clearable">Hide non clearable</string>
     <string name="hide_non_clearable_summary">Hide all non clearable notifications</string>
     <string name="dismiss_all">Allow dismissing all notifications</string>
     <string name="dismiss_all_summary">Allow dismissing even non clearable notifications. Of course, they\'re just hidden from lockscreen and not from the notification panel.</string>
     <string name="expanded_view">Expanded notification view</string>
-    <string name="expanded_view_summary">Add possibility to toggle between normal and expanded viewby longpress. The expanded view sometimes shows more private information so you might want to disable it.</string>
+    <string name="expanded_view_summary">Show notifications expanded when possible</string>
     <string name="force_expanded_view">Force expanded view</string>
     <string name="force_expanded_view_summary">Show notifications expanded by default. You still will be able to toggle between expanded and normal view.</string>
     <string name="wake_on_notification">Wake on notification</string>
@@ -1498,9 +1487,7 @@
     <string name="notifications_height_summary">Number of notifications displayed at once</string>
     <string name="offset_top">Offset to the top of the screen:</string>
     <string name="privacy_mode">Privacy Mode</string>
-    <string name="privacy_mode_summary">Disables notifications from being shown and dismissed. This way, you just see the icons of your notifications.</string>
-    <string name="dynamic_width">Dynamic width</string>
-    <string name="dynamic_width_summary">Sets the width of notifications dynamic, so that they only use the space they really need</string>
+    <string name="privacy_mode_summary">Disables notifications from beeing shown and dismissed. This way, you just see the icons of your notifications.</string>
     <string name="excluded_apps_title">Excluded applications</string>
     <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
     <string name="notification_color">Notification background color</string>
@@ -2207,6 +2194,7 @@
    <string name="heads_up_exclude_from_lock_screen_title">Disable on lock screen</string>
    <string name="heads_up_exclude_from_lock_screen_summary">Hide notifications on lock screen</string>
    <string name="heads_up_bg_color_title">Background color</string>
+   <string name="heads_up_text_color_title">Text color</string>
 
     <!-- Weather -->
     <string name="weather_settings_title">Weather</string>
