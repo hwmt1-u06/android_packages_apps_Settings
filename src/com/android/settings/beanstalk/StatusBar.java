@@ -143,8 +143,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
 	mToggleCarrierLogo = (CheckBoxPreference) findPreference(TOGGLE_CARRIER_LOGO);
 	mToggleCarrierLogo.setChecked((Settings.System.getInt(getContentResolver(),
-		Settings.System.TOGGLE_CARRIER_LOGO, 1) == 1));
-
+		Settings.System.TOGGLE_CARRIER_LOGO, 0) == 1));
+        if (!DeviceUtils.deviceSupportsMobileData(getActivity())) {
+            prefSet.removePreference(mToggleCarrierLogo);
+        }		
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

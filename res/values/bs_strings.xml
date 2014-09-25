@@ -1231,7 +1231,8 @@
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty label to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
-    <string name="disable_carrier_logo">Disable Carrier Logo</string>
+    <string name="disable_carrier_logo">Statusbar carrier logo</string>
+    <string name="disable_carrier_logo_summary">Shows carrier logo in status bar</string>
 
     <!-- QuickSettings fliptiles -->
     <string name="flip_qs_tiles_title">Flip tiles</string>
