@@ -14,7 +14,6 @@ import android.text.TextUtils;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
-import com.android.settings.beanstalk.AppMultiSelectListPreference;
 import com.android.settings.beanstalk.SeekBarPreferenceChOS;
 
 import java.util.HashSet;
@@ -34,16 +33,12 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
-    private static final String PREF_ENABLE_APP_CIRCLE_BAR = "enable_app_circle_bar";
-    private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
     private static final String KEY_TRIGGER_WIDTH = "trigger_width";
     private static final String KEY_TRIGGER_TOP = "trigger_top";
     private static final String KEY_TRIGGER_BOTTOM = "trigger_bottom";
 
-    private AppMultiSelectListPreference mIncludedAppCircleBar;
     private ListPreference mToastAnimation;
     private ListPreference mCrtMode;
-    private CheckBoxPreference mEnableAppCircleBar;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
     private SeekBarPreferenceChOS mTriggerWidthPref;
@@ -104,15 +99,6 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 	mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
 	mToastAnimation.setOnPreferenceChangeListener(this);
 
-	// App circle bar
-	mEnableAppCircleBar = (CheckBoxPreference) prefSet.findPreference(PREF_ENABLE_APP_CIRCLE_BAR);
-	mEnableAppCircleBar.setChecked((Settings.System.getInt(getContentResolver(),
-	Settings.System.ENABLE_APP_CIRCLE_BAR, 0) == 1));
-
-	mIncludedAppCircleBar = (AppMultiSelectListPreference) prefSet.findPreference		(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
-	Set<String> includedApps = getIncludedApps();
-	if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
-	mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
 
 	mTriggerWidthPref = (SeekBarPreferenceChOS) findPreference(KEY_TRIGGER_WIDTH);
 	mTriggerWidthPref.setValue(Settings.System.getInt(getContentResolver(),
@@ -145,20 +131,6 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 		Settings.System.APP_CIRCLE_BAR_SHOW_TRIGGER, 1);
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-	ContentResolver resolver = getActivity().getContentResolver();
-	boolean value;
-	if (preference == mEnableAppCircleBar) {
-	    boolean checked = ((CheckBoxPreference)preference).isChecked();
-	    Settings.System.putInt(resolver,
-		Settings.System.ENABLE_APP_CIRCLE_BAR, checked ? 1:0);
-	} else {
-	    return super.onPreferenceTreeClick(preferenceScreen, preference);
-	}
-
-	return true;
-    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -219,30 +191,7 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
                     value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
         }
-	if (preference == mIncludedAppCircleBar) {
-	    storeIncludedApps((Set<String>) newValue);
-	}
         return false;
     }
 
-    private Set<String> getIncludedApps() {
-	String included = Settings.System.getString(getActivity().getContentResolver(),
-			Settings.System.WHITELIST_APP_CIRCLE_BAR);
-	if (TextUtils.isEmpty(included)) {
-		return null;
-	}
-	return new HashSet<String>(Arrays.asList(included.split("\\|")));
-    }
-
-    private void storeIncludedApps(Set<String> values) {
-	StringBuilder builder = new StringBuilder();
-	String delimiter = "";
-	for (String value : values) {
-		builder.append(delimiter);
-		builder.append(value);
-		delimiter = "|";
-	}
-	Settings.System.putString(getActivity().getContentResolver(),
-		Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
-    }
 }
