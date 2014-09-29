@@ -41,9 +41,6 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
     private ListPreference mCrtMode;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-    private SeekBarPreferenceChOS mTriggerWidthPref;
-    private SeekBarPreferenceChOS mTriggerTopPref;
-    private SeekBarPreferenceChOS mTriggerBottomPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,35 +97,6 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 	mToastAnimation.setOnPreferenceChangeListener(this);
 
 
-	mTriggerWidthPref = (SeekBarPreferenceChOS) findPreference(KEY_TRIGGER_WIDTH);
-	mTriggerWidthPref.setValue(Settings.System.getInt(getContentResolver(),
-	Settings.System.APP_CIRCLE_BAR_TRIGGER_WIDTH, 10));
-	mTriggerWidthPref.setOnPreferenceChangeListener(this);
-
-	mTriggerTopPref = (SeekBarPreferenceChOS) findPreference(KEY_TRIGGER_TOP);
-	mTriggerTopPref.setValue(Settings.System.getInt(getContentResolver(),
-	Settings.System.APP_CIRCLE_BAR_TRIGGER_TOP, 0));
-	mTriggerTopPref.setOnPreferenceChangeListener(this);
-
-	mTriggerBottomPref = (SeekBarPreferenceChOS) findPreference(KEY_TRIGGER_BOTTOM);
-	mTriggerBottomPref.setValue(Settings.System.getInt(getContentResolver(),
-	Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, 100));
-	mTriggerBottomPref.setOnPreferenceChangeListener(this);
-
-    }
-
-    @Override
-    public void onPause() {
-	super.onPause();
-	Settings.System.putInt(getContentResolver(),
-		Settings.System.APP_CIRCLE_BAR_SHOW_TRIGGER, 0);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-	Settings.System.putInt(getContentResolver(),
-		Settings.System.APP_CIRCLE_BAR_SHOW_TRIGGER, 1);
     }
 
 
@@ -151,27 +119,6 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
             Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
             return true;
-	}
-
-	if (preference == mTriggerWidthPref) {
-	    int width = ((Integer)newValue).intValue();
-	    Settings.System.putInt(getContentResolver(),
-		Settings.System.APP_CIRCLE_BAR_TRIGGER_WIDTH, width);
-	    return true;
-	}
-
-    	if (preference == mTriggerTopPref) {
-	    int top = ((Integer)newValue).intValue();
-	    Settings.System.putInt(getContentResolver(),
-		Settings.System.APP_CIRCLE_BAR_TRIGGER_TOP, top);
-	    return true;
-	}
-
-	if (preference == mTriggerBottomPref) {
-	    int bottom = ((Integer)newValue).intValue();
-	    Settings.System.putInt(getContentResolver(),
-		Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, bottom);
-	    return true;
 	}
 
 	if (KEY_LISTVIEW_ANIMATION.equals(key)) {
