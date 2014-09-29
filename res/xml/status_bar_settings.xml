@@ -37,9 +37,9 @@
 
 	<!-- Network usage stats -->
         <PreferenceScreen
-            android:key="network_usage_stats"
-            android:fragment="com.android.settings.beanstalk.NetworkUsageStats"
-            android:title="@string/status_bar_network_cat" /> 
+	    android:key="traffic"
+	    android:fragment="com.android.settings.beanstalk.Traffic"
+	    android:title="@string/network_traffic_title" />
 
 	<CheckBoxPreference
 	    android:key="toggle_carrier_logo"
@@ -58,6 +58,12 @@
             android:entryValues="@array/signal_style_values"
             android:key="signal_style"
             android:title="@string/signal_style" />
+
+	<CheckBoxPreference
+	    android:key="statusbar_6bar_signal"
+	    android:title="@string/status_bar_six_bar_signal_title"
+	    android:summary="@string/status_bar_six_bar_signal_summary"
+  	    android:persistent="false" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="signal_color"
