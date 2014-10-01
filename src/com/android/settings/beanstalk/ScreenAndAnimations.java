@@ -41,6 +41,9 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
     private ListPreference mCrtMode;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
+    private SeekBarPreferenceChOS mTriggerWidthPref;
+    private SeekBarPreferenceChOS mTriggerTopPref;
+    private SeekBarPreferenceChOS mTriggerBottomPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
