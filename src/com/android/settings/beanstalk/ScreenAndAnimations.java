@@ -14,6 +14,7 @@ import android.text.TextUtils;
 import android.preference.PreferenceScreen;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
+import com.android.settings.beanstalk.AppMultiSelectListPreference;
 import com.android.settings.beanstalk.SeekBarPreferenceChOS;
 
 import java.util.HashSet;
@@ -33,17 +34,11 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
-    private static final String KEY_TRIGGER_WIDTH = "trigger_width";
-    private static final String KEY_TRIGGER_TOP = "trigger_top";
-    private static final String KEY_TRIGGER_BOTTOM = "trigger_bottom";
 
     private ListPreference mToastAnimation;
     private ListPreference mCrtMode;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-    private SeekBarPreferenceChOS mTriggerWidthPref;
-    private SeekBarPreferenceChOS mTriggerTopPref;
-    private SeekBarPreferenceChOS mTriggerBottomPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -99,9 +94,22 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 	mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
 	mToastAnimation.setOnPreferenceChangeListener(this);
 
-
     }
 
+    @Override
+    public void onPause() {
+	super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+	    return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -143,5 +151,4 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
         }
         return false;
     }
-
 }
