@@ -35,8 +35,7 @@
             android:key="clock_style_pref"
             android:title="@string/status_bar_clock" />
 
-	<!-- Network usage stats -->
-        <PreferenceScreen
+	<PreferenceScreen
 	    android:key="traffic"
 	    android:fragment="com.android.settings.beanstalk.Traffic"
 	    android:title="@string/network_traffic_title" />
