@@ -59,6 +59,7 @@
     <string name="clock_color_title">Color</string>
     <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_show_clock_title">Show clock and date</string>
+    <string name="status_bar_force_clock_lockscreen">Always show on lockscreen</string>
     <string name="status_bar_am_pm_title">AM/PM</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
     <string name="enable_clock_weekday">Day of the week</string>
@@ -822,9 +823,9 @@
 
     <!-- Halo -->
     <string name="halo_settings_title">Halo</string>
+    <string name="halo_active_title">Enable HALO</string>
+    <string name="halo_active_summary">If checked enable HALO feature</string>
     <string name="halo_behavior_title">Halo behavior</string>
-    <string name="halo_enabled_title">Enable HALO</string>
-    <string name="halo_enabled_summary">If halo has been enabled, multi window will be disabled completely</string>
     <string name="halo_hide_title">Hide Halo after activity</string>
     <string name="halo_hide_summary">Halo will appear for incoming tasks and scroll out of sight after a while</string>
     <string name="halo_reversed_title">Reverse Halo</string>
@@ -2032,6 +2033,9 @@
 
     <!-- Hover settings -->
     <string name="hover_settings_title">Hover</string>
+    <!-- Hover state -->
+    <string name="hover_title">Hover</string>
+    <string name="hover_state_title">Enable Hover</string>
     <string name="hover_require_fullscreen_mode_title">Require Fullscreen-Mode</string>
     <string name="hover_require_fullscreen_mode_summary">Only show up when StatusBar is hidden</string>
     <string name="hover_exclude_low_priority_title">Exclude low priority</string>
@@ -2179,17 +2183,6 @@
    <string name="heads_up_bg_color_title">Background color</string>
    <string name="heads_up_text_color_title">Text color</string>
 
-    <!-- Weather -->
-    <string name="weather_settings_title">Weather</string>
-    <string name="weather_alert_title">Weather warning</string>
-    <string name="weather_alert_message">Phone will now reboot\nto apply changes!</string>
-    <string name="weather_header_title">Weather header</string>
-    <string name="weather_header_summary">Add a small weather\ninfo in statusbar header.</string>
-    <string name="weather_notification_title">Weather notification</string>
-    <string name="weather_notification_summary">Add weather info as notification.</string>
-    <string name="weather_icon_title">Weather statusbar icon</string>
-    <string name="weather_icon_summary">Hide weather icon in statusbar.</string>
-
     <!-- Host File Manager -->
     <string name="hfm_disable_ads_title">Disable ads</string>
     <string name="hfm_disable_ads_summary">Change hosts file to disable ads</string>
@@ -2273,4 +2266,8 @@
     <string name="summary_quick_access_linked">Use the select tiles from quick settings</string>
     <string name="ribbon_picker_title">Ribbon and layout</string>
     <string name="ribbon_picker_summary">View, select or change the ribbon widgets</string>
+
+    <!-- Force expand notifications -->
+    <string name="notification_force_expand_title">Force expanded notification</string>
+    <string name="notification_force_expand_summary">Force expanded notifications on all apps that support it</string>
 </resources>
