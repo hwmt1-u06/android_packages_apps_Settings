@@ -86,8 +86,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String KEY_SMS_BREATH = "sms_breath";
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
+    private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";
     private static final String TOGGLE_CARRIER_LOGO = "toggle_carrier_logo";
-    private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";	
 
     private ColorPickerPreference mColorPicker;
     private PreferenceScreen mClockStyle;
@@ -95,8 +95,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private CheckBoxPreference mSMSBreath;
     private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mVoicemailBreath;
+    private CheckBoxPreference mStatusBarSixBarSignal;
     private CheckBoxPreference mToggleCarrierLogo;
-    private CheckBoxPreference mStatusBarSixBarSignal;	
 
     ListPreference mDbmStyletyle;
     CheckBoxPreference mHideSignal;
@@ -142,10 +142,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mSMSBreath = (CheckBoxPreference) prefSet.findPreference(KEY_SMS_BREATH);
         mMissedCallBreath = (CheckBoxPreference) prefSet.findPreference(KEY_MISSED_CALL_BREATH);
         mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);
-		
+
 	mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
 	mStatusBarSixBarSignal.setChecked((Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.STATUSBAR_6BAR_SIGNAL, 0) == 1));		
+                .getContentResolver(), Settings.System.STATUSBAR_6BAR_SIGNAL, 0) == 1));
 
 	mToggleCarrierLogo = (CheckBoxPreference) findPreference(TOGGLE_CARRIER_LOGO);
 	mToggleCarrierLogo.setChecked((Settings.System.getInt(getContentResolver(),
