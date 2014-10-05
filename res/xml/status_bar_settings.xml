@@ -50,7 +50,7 @@
 	    android:key="toggle_carrier_logo"
 	    android:title="@string/disable_carrier_logo"
 	    android:summary="@string/disable_carrier_logo_summary"
-	    android:defaultValue="true" />
+	    android:defaultValue="false" />
 	    
         <CheckBoxPreference
             android:key="status_bar_carrier"
@@ -113,19 +113,19 @@
         <CheckBoxPreference android:key="sms_breath"
             android:title="@string/sms_breath"
             android:summary="@string/sms_breath_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <CheckBoxPreference
             android:key="missed_call_breath"
             android:title="@string/title_missed_call_breath"
             android:summary="@string/missed_call_breath_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <CheckBoxPreference
             android:key="voicemail_breath"
             android:title="@string/title_voicemail_breath"
             android:summary="@string/voicemail_breath_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
