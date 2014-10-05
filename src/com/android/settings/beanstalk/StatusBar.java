@@ -76,27 +76,36 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.internal.util.beanstalk.DeviceUtils;
 
-public class StatusBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class StatusBar extends SettingsPreferenceFragment 
+    implements OnPreferenceChangeListener {
 
     private static final String TAG = "StatusBarSettings";
 
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+    private static final String STATUS_BAR_NOTIFICATION_COUNT = "status_bar_notification_count";	
 
     private static final String KEY_SMS_BREATH = "sms_breath";
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_VOICEMAIL_BREATH = "voicemail_breath";
     private static final String STATUSBAR_6BAR_SIGNAL = "statusbar_6bar_signal";
     private static final String TOGGLE_CARRIER_LOGO = "toggle_carrier_logo";
+	private static final String STATUS_BAR_CARRIER = "status_bar_carrier";
+    private static final String STATUS_BAR_CARRIER_COLOR = "status_bar_carrier_color";
+	
+    static final int DEFAULT_STATUS_CARRIER_COLOR = 0xffffffff;	
 
     private ColorPickerPreference mColorPicker;
     private PreferenceScreen mClockStyle;
     private CheckBoxPreference mStatusBarBrightnessControl;
+    private CheckBoxPreference mStatusBarNotifCount;	
     private CheckBoxPreference mSMSBreath;
     private CheckBoxPreference mMissedCallBreath;
     private CheckBoxPreference mVoicemailBreath;
     private CheckBoxPreference mStatusBarSixBarSignal;
     private CheckBoxPreference mToggleCarrierLogo;
+    private CheckBoxPreference mStatusBarCarrier;
+    private ColorPickerPreference mCarrierColorPicker;	
 
     ListPreference mDbmStyletyle;
     CheckBoxPreference mHideSignal;
@@ -107,8 +116,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
         addPreferencesFromResource(R.xml.status_bar_settings);
 
-	PreferenceScreen prefSet = getPreferenceScreen();
+        PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
 
+        int intColor;
+        String hexColor;
 	// Start observing for changes on auto brightness
         StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
             new StatusBarBrightnessChangedObserver(new Handler());
@@ -119,13 +131,17 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             updateClockStyleDescription();
         }
 
-	mStatusBarBrightnessControl =
+        mStatusBarBrightnessControl =
             (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
         mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getContentResolver(),
                             Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
         mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
+		
+        mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NOTIFICATION_COUNT);
+        mStatusBarNotifCount.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_NOTIFICATION_COUNT, 0) == 1));		
 
-	mDbmStyletyle = (ListPreference) findPreference("signal_style");
+	    mDbmStyletyle = (ListPreference) findPreference("signal_style");
         mDbmStyletyle.setOnPreferenceChangeListener(this);
         mDbmStyletyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_SIGNAL_TEXT,
@@ -146,6 +162,18 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 	mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
 	mStatusBarSixBarSignal.setChecked((Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_6BAR_SIGNAL, 0) == 1));
+				
+        mStatusBarCarrier = (CheckBoxPreference) findPreference(STATUS_BAR_CARRIER);
+        mStatusBarCarrier.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CARRIER, 0) == 1));
+
+        mCarrierColorPicker = (ColorPickerPreference) findPreference(STATUS_BAR_CARRIER_COLOR);
+        mCarrierColorPicker.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, DEFAULT_STATUS_CARRIER_COLOR);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mCarrierColorPicker.setSummary(hexColor);
+        mCarrierColorPicker.setNewPreviewColor(intColor);				
 
 	mToggleCarrierLogo = (CheckBoxPreference) findPreference(TOGGLE_CARRIER_LOGO);
 	mToggleCarrierLogo.setChecked((Settings.System.getInt(getContentResolver(),
@@ -166,6 +194,14 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SIGNAL_TEXT, val);
             return true;
+        } else if (preference == mCarrierColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_CARRIER_COLOR, intHex);
+            return true;			
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
                     .valueOf(newValue)));
@@ -199,7 +235,17 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mVoicemailBreath.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.KEY_VOICEMAIL_BREATH, value ? 1 : 0);
+            return true;	
+        } else if (preference == mStatusBarNotifCount) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_NOTIFICATION_COUNT,
+                    mStatusBarNotifCount.isChecked() ? 1 : 0);
             return true;
+        } else if (preference == mStatusBarCarrier) {
+           Settings.System.putInt(getContentResolver(),
+                   Settings.System.STATUS_BAR_CARRIER,
+                   mStatusBarCarrier.isChecked() ? 1 : 0);
+           return true;			
 	} else if (preference == mStatusBarSixBarSignal) {
             value = mStatusBarSixBarSignal.isChecked();
 	    Settings.System.putInt(getActivity().getContentResolver(),
