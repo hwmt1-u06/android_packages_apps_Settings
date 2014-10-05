@@ -82,7 +82,6 @@ public class StatusBar extends SettingsPreferenceFragment
     private static final String TAG = "StatusBarSettings";
 
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
-    private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
     private static final String STATUS_BAR_NOTIFICATION_COUNT = "status_bar_notification_count";	
 
     private static final String KEY_SMS_BREATH = "sms_breath";
@@ -97,7 +96,6 @@ public class StatusBar extends SettingsPreferenceFragment
 
     private ColorPickerPreference mColorPicker;
     private PreferenceScreen mClockStyle;
-    private CheckBoxPreference mStatusBarBrightnessControl;
     private CheckBoxPreference mStatusBarNotifCount;	
     private CheckBoxPreference mSMSBreath;
     private CheckBoxPreference mMissedCallBreath;
@@ -121,21 +119,12 @@ public class StatusBar extends SettingsPreferenceFragment
 
         int intColor;
         String hexColor;
-	// Start observing for changes on auto brightness
-        StatusBarBrightnessChangedObserver statusBarBrightnessChangedObserver =
-            new StatusBarBrightnessChangedObserver(new Handler());
-        statusBarBrightnessChangedObserver.startObserving();
 
         mClockStyle = (PreferenceScreen) prefSet.findPreference(KEY_STATUS_BAR_CLOCK);
         if (mClockStyle != null) {
             updateClockStyleDescription();
         }
 
-        mStatusBarBrightnessControl =
-            (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
-        mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getContentResolver(),
-                            Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
-        mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
 		
         mStatusBarNotifCount = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_NOTIFICATION_COUNT);
         mStatusBarNotifCount.setChecked((Settings.System.getInt(getContentResolver(),
@@ -184,12 +173,7 @@ public class StatusBar extends SettingsPreferenceFragment
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-    	if (preference == mStatusBarBrightnessControl) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
-                    (Boolean) newValue ? 1 : 0);
-            return true;
-	} else if (preference == mDbmStyletyle) {
+          if (preference == mDbmStyletyle) {
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_SIGNAL_TEXT, val);
@@ -263,27 +247,6 @@ public class StatusBar extends SettingsPreferenceFragment
     public void onResume() {
         super.onResume();
     	updateClockStyleDescription();
-	updateStatusBarBrightnessControl();
-    }
-
-    private void updateStatusBarBrightnessControl() {
-        try {
-            if (mStatusBarBrightnessControl != null) {
-                int mode = Settings.System.getIntForUser(getContentResolver(),
-                    Settings.System.SCREEN_BRIGHTNESS_MODE,
-                    Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
-
-                if (mode == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
-                    mStatusBarBrightnessControl.setEnabled(false);
-                    mStatusBarBrightnessControl.setSummary(R.string.status_bar_toggle_info);
-                } else {
-                    mStatusBarBrightnessControl.setEnabled(true);
-                    mStatusBarBrightnessControl.setSummary(
-                        R.string.status_bar_toggle_brightness_summary);
-                }
-            }
-        } catch (SettingNotFoundException e) {
-        }
     }
 
     private void updateClockStyleDescription() {
@@ -292,23 +255,6 @@ public class StatusBar extends SettingsPreferenceFragment
             mClockStyle.setSummary(getString(R.string.enabled));
         } else {
             mClockStyle.setSummary(getString(R.string.disabled));
-        }
-    }
-
-    private class StatusBarBrightnessChangedObserver extends ContentObserver {
-        public StatusBarBrightnessChangedObserver(Handler handler) {
-            super(handler);
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            updateStatusBarBrightnessControl();
-        }
-
-        public void startObserving() {
-            getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(Settings.System.SCREEN_BRIGHTNESS_MODE),
-                    false, this);
         }
     }
 }
