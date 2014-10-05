@@ -57,12 +57,6 @@
         android:fragment="com.android.settings.beanstalk.HoverSettings"
         android:title="@string/hover_settings_title" />
 
-    <!-- Lockscreen Notifications -->
-    <PreferenceScreen
-        android:title="@string/notifications_on_lockscreen"
-        android:fragment="com.android.settings.beanstalk.LockscreenNotifications"
-        android:summary="@string/notifications_on_lockscreen_summary" />
-
     <!-- PA Pie control -->
     <PreferenceScreen
 	android:key="pa_pie_control"
