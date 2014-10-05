@@ -159,8 +159,8 @@ public class StatusBar extends SettingsPreferenceFragment
         mMissedCallBreath = (CheckBoxPreference) prefSet.findPreference(KEY_MISSED_CALL_BREATH);
         mVoicemailBreath = (CheckBoxPreference) prefSet.findPreference(KEY_VOICEMAIL_BREATH);
 
-	mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
-	mStatusBarSixBarSignal.setChecked((Settings.System.getInt(getActivity()
+    	mStatusBarSixBarSignal = (CheckBoxPreference) findPreference(STATUSBAR_6BAR_SIGNAL);
+    	mStatusBarSixBarSignal.setChecked((Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_6BAR_SIGNAL, 0) == 1));
 				
         mStatusBarCarrier = (CheckBoxPreference) findPreference(STATUS_BAR_CARRIER);
@@ -175,16 +175,16 @@ public class StatusBar extends SettingsPreferenceFragment
         mCarrierColorPicker.setSummary(hexColor);
         mCarrierColorPicker.setNewPreviewColor(intColor);				
 
-	mToggleCarrierLogo = (CheckBoxPreference) findPreference(TOGGLE_CARRIER_LOGO);
-	mToggleCarrierLogo.setChecked((Settings.System.getInt(getContentResolver(),
-		Settings.System.TOGGLE_CARRIER_LOGO, 0) == 1));
+    	mToggleCarrierLogo = (CheckBoxPreference) findPreference(TOGGLE_CARRIER_LOGO);
+    	mToggleCarrierLogo.setChecked((Settings.System.getInt(getContentResolver(),
+	    	Settings.System.TOGGLE_CARRIER_LOGO, 0) == 1));
         if (!DeviceUtils.deviceSupportsMobileData(getActivity())) {
             prefSet.removePreference(mToggleCarrierLogo);
         }		
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-	if (preference == mStatusBarBrightnessControl) {
+    	if (preference == mStatusBarBrightnessControl) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
                     (Boolean) newValue ? 1 : 0);
@@ -227,10 +227,10 @@ public class StatusBar extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.KEY_MISSED_CALL_BREATH, value ? 1 : 0);
             return true;
-	} else if (preference == mToggleCarrierLogo) {
-	    Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(), 			    Settings.System.TOGGLE_CARRIER_LOGO,
+    	} else if (preference == mToggleCarrierLogo) {
+	        Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(), 			    Settings.System.TOGGLE_CARRIER_LOGO,
 		    mToggleCarrierLogo.isChecked() ? 1 : 0);
-	    return true;
+	        return true;
         } else if (preference == mVoicemailBreath) {
             value = mVoicemailBreath.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
@@ -246,7 +246,7 @@ public class StatusBar extends SettingsPreferenceFragment
                    Settings.System.STATUS_BAR_CARRIER,
                    mStatusBarCarrier.isChecked() ? 1 : 0);
            return true;			
-	} else if (preference == mStatusBarSixBarSignal) {
+    	} else if (preference == mStatusBarSixBarSignal) {
             value = mStatusBarSixBarSignal.isChecked();
 	    Settings.System.putInt(getActivity().getContentResolver(),
 		    Settings.System.STATUSBAR_6BAR_SIGNAL, value ? 1 : 0);
