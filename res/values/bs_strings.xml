@@ -2258,6 +2258,8 @@
     <string name="status_bar_six_bar_signal_summary">Enable to show six bar signal in statusbar/qs</string>
 
     <string name="advanced_controls_title">Advanced system controls</string>
+    <string name="xposed_mods_title">Xposed Apps Access</string>
+    <string name="xposed_mods_summary">Proceed With Caution!</string>    
 
     <!-- Quick ribbon -->
     <string name="category_quick_access">Quick ribbon</string>
