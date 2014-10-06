@@ -2281,5 +2281,9 @@
     <!-- Status bar notification count -->
     <string name="status_bar_notification_count_title">Notification count</string>
     <string name="status_bar_notification_count_summary">Display number of similar notifications</string>
+    
+    <!-- OmniSwitch -->
+    <string name="omniswitch_category">OmniSwitch</string>
+    <string name="omniswitch_settings_title">OmniSwitch Settings</string>    
            
 </resources>
