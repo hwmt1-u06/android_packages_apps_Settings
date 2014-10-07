@@ -6,36 +6,42 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_advanced"    
         settings:includeXmlForSearch="@xml/advanced_controls"
         android:key="advanced_controls"
         android:fragment="com.android.settings.beanstalk.AdvancedControls"
         android:title="@string/advanced_controls_title" />
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_teloradio"    
         settings:includeXmlForSearch="@xml/alerts_and_warnings"    
         android:key="alerts_and_warnings"
         android:fragment="com.android.settings.beanstalk.AlertsAndWarnings"
         android:title="@string/alerts_and_warnings_title" />
 
     <PreferenceScreen
-            settings:includeXmlForSearch="@xml/notification_drawer_qs_settings"
+        android:icon="@drawable/ic_notify_open_normal"    
+        settings:includeXmlForSearch="@xml/notification_drawer_qs_settings"
         android:key="notification_drawer_qs"
         android:fragment="com.android.settings.beanstalk.NotificationDrawerQsSettings"
         android:title="@string/notification_drawer_qs_title" />
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_display_animations"    
         settings:includeXmlForSearch="@xml/screen_and_animations"
         android:key="screen_and_animations"
         android:fragment="com.android.settings.beanstalk.ScreenAndAnimations"
         android:title="@string/screen_and_animations_title" />
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_actived"    
         settings:includeXmlForSearch="@xml/status_bar_settings"    
         android:key="status_bar"
         android:fragment="com.android.settings.beanstalk.StatusBar"
         android:title="@string/status_bar_title" />
 
      <PreferenceScreen
+        android:icon="@drawable/ic_settings_quicksettings"     
         android:key="navbar_targets_settings"
         android:fragment="com.android.settings.beanstalk.dslv.ButtonsListViewSettings"
         android:title="@string/power_menu_title">
@@ -49,23 +55,27 @@
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_home"    
         settings:includeXmlForSearch="@xml/navbar_settings"    
         android:key="navbar_settings"
         android:fragment="com.android.settings.beanstalk.NavbarSettings"
         android:title="@string/navigation_bar" />
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_battery"    
         settings:includeXmlForSearch="@xml/battery_saver_settings"     
         android:fragment="com.android.settings.beanstalk.BatterySaverSettings"
         android:title="@string/battery_saver_title" />
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_applications"    
         settings:includeXmlForSearch="@xml/propmodder" 
         android:key="buildprop_modder"
         android:title="@string/propmodder_title" 
         android:fragment="com.android.settings.cyanogenmod.PropModder"/>
 
     <PreferenceScreen
+        android:icon="@drawable/ic_rom_control_init"    
         settings:includeXmlForSearch="@xml/init_d" 
         android:id="@+id/initD"
         android:fragment="com.android.settings.InitD"
@@ -73,18 +83,21 @@
         android:summary="@string/header_summary_init_d" />
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_about_beanstalk"    
         settings:includeXmlForSearch="@xml/general_settings"     
         android:key="general_settings"
         android:fragment="com.android.settings.beanstalk.GeneralSettings"
         android:title="@string/general_settings_title" />
 
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_density_changer"    
         settings:includeXmlForSearch="@xml/misc_settings"     
 	android:key="misc_settings"
         android:fragment="com.android.settings.beanstalk.MiscSettings"
         android:title="@string/misc_settings_title" />
         
     <PreferenceScreen
+        android:icon="@drawable/ic_settings_system"
         settings:includeXmlForSearch="@xml/xposed_mods"
         android:key="xposed_mods"
         android:fragment="com.android.settings.beanstalk.XposedMods"
