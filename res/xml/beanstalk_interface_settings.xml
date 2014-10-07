@@ -18,7 +18,7 @@
         android:title="@string/alerts_and_warnings_title" />
 
     <PreferenceScreen
-        settings:includeXmlForSearch="@xml/notification_drawer_qs_settings"
+            settings:includeXmlForSearch="@xml/notification_drawer_qs_settings"
         android:key="notification_drawer_qs"
         android:fragment="com.android.settings.beanstalk.NotificationDrawerQsSettings"
         android:title="@string/notification_drawer_qs_title" />
@@ -80,7 +80,7 @@
 
     <PreferenceScreen
         settings:includeXmlForSearch="@xml/misc_settings"     
-	    android:key="misc_settings"
+	android:key="misc_settings"
         android:fragment="com.android.settings.beanstalk.MiscSettings"
         android:title="@string/misc_settings_title" />
         
@@ -89,16 +89,6 @@
         android:key="xposed_mods"
         android:fragment="com.android.settings.beanstalk.XposedMods"
         android:title="@string/xposed_mods_title" 
-        android:summary="@string/xposed_mods_summary" />   
-        
-    <PreferenceScreen
-        android:key="omniswitch"
-        android:layout="@layout/preference_omniswitch"
-        android:title="@string/omniswitch_settings_title" >
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="org.omnirom.omniswitch"
-            android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
-    </PreferenceScreen>                   
+        android:summary="@string/xposed_mods_summary" />              
 
 </PreferenceScreen>
