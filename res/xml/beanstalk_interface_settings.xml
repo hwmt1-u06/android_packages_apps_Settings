@@ -89,6 +89,14 @@
         android:key="xposed_mods"
         android:fragment="com.android.settings.beanstalk.XposedMods"
         android:title="@string/xposed_mods_title" 
-        android:summary="@string/xposed_mods_summary" />              
+        android:summary="@string/xposed_mods_summary" />
+	
+    <!-- OmniSwitch -->
+    <PreferenceScreen
+        android:key="omniswitch"
+        android:id="@+id/omniswitch"
+        android:icon="@drawable/ic_settings_omniswitch"
+        android:title="@string/omniswitch_settings_title"
+        android:fragment="com.android.settings.aicp.OmniSwitch" />	              
 
 </PreferenceScreen>
