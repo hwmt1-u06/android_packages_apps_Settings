@@ -1153,6 +1153,10 @@
     <string name="custom_tile_null_warning">An action must be set first</string>
     <string name="custom_tile_dialog_extra_text">Advanced tile detected. Your tile will now change states when adjusted from anywhere. You may optionally input an icon and label for the toggle to switch to if it doesn\'t recognize the state it\'s in.</string>
     <string name="custom_tile_resolve_name">Unknown</string>
+    <string name="pref_location_mode_title">Location modes</string>
+    <string name="cm_location_mode_battery_saving">Battery saving</string>
+    <string name="cm_location_mode_device_only">Device only</string>
+    <string name="cm_location_mode_high_accuracy">High accuracy</string>    
 
     <!-- QuickSettings style options -->
     <string name="quicksettings_tiles_style">Style</string>
