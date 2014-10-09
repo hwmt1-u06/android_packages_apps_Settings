@@ -107,7 +107,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
  //       setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
  //       findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
-        setValueSummary(KEY_MOD_VERSION, "ro.cm.version");
+        setValueSummary(KEY_MOD_VERSION, "ro.beanstalk.version");
 	findPreference(KEY_MOD_VERSION).setEnabled(true);
 
         if (!SELinux.isSELinuxEnabled()) {
