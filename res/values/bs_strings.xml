@@ -1528,7 +1528,7 @@
     <string name="xposed_per_app_title">Per App Settings</string>
     <string name="xposed_per_app__summary">Customize DPI, UI layout, and more per app settings to your liking here</string>
     <string name="xposed_netflix_title">Netflix Workaround</string>
-    <string name="xposed_netflix_summary">Netflix workaround for Exynos4 devices on AOSP 4.4.x+ Activate module to use</string>
+    <string name="xposed_netflix_summary">NOT SELECTABLE! Make Sure Xposed Framework is installed and walkaround is Enabled in Modules</string>
     <string name="xposed_warning_title">Warning:</string>
     <string name="xposed_warning_summary">These mods may adversely affect performance and stability. Use at your own risk!</string>
 
