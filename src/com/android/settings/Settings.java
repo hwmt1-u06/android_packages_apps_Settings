@@ -85,11 +85,11 @@ import com.android.settings.accounts.ManageAccountsSettings;
 import com.android.settings.applications.AppOpsSummary;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
+import com.android.settings.carbon.superuser.PolicyNativeFragment;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothEnabler;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.cyanogenmod.ButtonSettings;
-import com.android.settings.cyanogenmod.superuser.PolicyNativeFragment;
 import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
@@ -201,7 +201,9 @@ public class Settings extends PreferenceActivity
             R.id.home_settings,
             R.id.lock_screen_settings,
             R.id.privacy_settings_cyanogenmod,
-            R.id.button_settings
+            R.id.button_settings,
+            R.id.supersu_settings,			
+            R.id.superuser
     };
 
     private SharedPreferences mDevelopmentPreferences;
@@ -485,7 +487,8 @@ public class Settings extends PreferenceActivity
         com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
 	ThemeSettings.class.getName(),
         ShakeEvents.class.getName(),
-	com.android.settings.wifi.WifiApSettings.class.getName()
+	com.android.settings.wifi.WifiApSettings.class.getName(),
+        com.android.settings.carbon.superuser.PolicyNativeFragment.class.getName()	
     };
 
     @Override
@@ -773,10 +776,28 @@ public class Settings extends PreferenceActivity
                 if (!supported) {
                     target.remove(i);
                 }
-            } else if (id == R.id.superuser) {
-                if (!DevelopmentSettings.isRootForAppsEnabled()) {
+            } else if (id == R.id.supersu_settings) {
+                // Embedding into Settings is supported from SuperSU v1.85 and up
+                boolean supported = false;
+                try {
+                    supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+                } catch (PackageManager.NameNotFoundException e) {
+                }
+                if (!supported) {
+                    //remove SuperSU header
                     target.remove(i);
                 }
+            } else if (id == R.id.superuser) {
+                boolean supported = false;
+                try {
+                    supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+                } catch (PackageManager.NameNotFoundException e) {
+                }
+                if (supported) {
+                    //SuperSu is installed and embeddable, so remove SuperUser header
+                    target.remove(i);
+                }				
+
             } else if (id == R.id.voice_wakeup_settings) {
                 if(!Utils.isPackageInstalled(this, VOICE_WAKEUP_PACKAGE_NAME)) {
                     target.remove(header);
