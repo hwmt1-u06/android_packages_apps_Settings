@@ -31,7 +31,7 @@
     <string name="header_category_rom_settings">Advanced</string>
 
     <!-- BeanStalk settings screens -->
-    <string name="interface_settings_title">BlissStalk options</string>
+    <string name="interface_settings_title">Bliss Options</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>
@@ -895,7 +895,7 @@
     <string name="lockscreen_lock_icon_bs_ten">BeanStalk Icon #11-HoloXChrome</string> 
     <string name="lockscreen_lock_icon_bs">Default icon</string>
     <string name="lockscreen_lock_icon_bs_one">BeanStalk Icon #1-White Nexus Atom</string>
-    <string name="lockscreen_lock_icon_bs_two">BeanStalk Icon #2-Colored Nexus Atom</string>
+    <string name="lockscreen_lock_icon_bs_two">BeanStalk Icon #2-Green/White Bliss</string>
     <string name="lockscreen_lock_icon_bs_three">BeanStalk Icon #3-Cyanogen</string>
     <string name="lockscreen_lock_icon_bs_four">BeanStalk Icon #4-Punisher</string>
     <string name="lockscreen_lock_icon_bs_five">BeanStalk Icon #5-Android Logo</string>
@@ -2294,6 +2294,10 @@
     
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>        
+    <!-- BlissStalk Updater -->
+    <string name="blissupdate_settings_title">BlissStalk Updates</string>
+    <string name="blissupdate_settings_summary">Check for, view or install updates</string>    
+    
     <!-- Download Center -->
     <string name="download_category">Bliss Downloads</string>
     <string name="download_category_summary">Find all of your support needs inside</string>
