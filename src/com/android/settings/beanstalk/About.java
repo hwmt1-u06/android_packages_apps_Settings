@@ -62,7 +62,7 @@ public class About extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://www.scotthartbti.com");
+            launchUrl("http://www.teambliss.x10host.com");
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
