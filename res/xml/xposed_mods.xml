@@ -30,5 +30,10 @@
             android:targetPackage="de.robv.android.xposed.mods.appsettings"
 	    android:targetClass="de.robv.android.xposed.mods.appsettings.XposedModActivity" />
     </PreferenceScreen>
+     	    
+    <PreferenceScreen
+        android:key="xposed_netflix_workaround"
+        android:title="@string/xposed_netflix_title"
+        android:summary="@string/xposed_netflix_summary" />
 	    	    
 </PreferenceScreen>
