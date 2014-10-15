@@ -1828,6 +1828,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+        <activity android:name=".bliss.Download" />
                 android:value="com.android.settings.voicewakeup.VoiceWakeupSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/voice_wakeup_settings" />
