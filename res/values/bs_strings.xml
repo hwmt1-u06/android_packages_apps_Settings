@@ -2297,24 +2297,6 @@
     
     <!-- BlissStalk Updater -->
     <string name="blissupdate_settings_title">BlissStalk Updates</string>
-    <string name="blissupdate_settings_summary">Check for, view or install updates</string>    
-    
-    <!-- Download Center -->
-    <string name="download_category">LiquidSmooth Downloads</string>
-    <string name="download_category_summary">Find all of your support needs inside</string>
-    <string name="rom_category">Rom Download</string>
-    <string name="gapps_category">GAPPS Packages</string>
-    <string name="xposed_category">Xposed Framework</string>
-    <string name="bsgapps_title">Bliss Gapps</string>
-    <string name="bsgapps_summary">Bliss Gapps are generally recommended gapps for use on BlissStalk</string>
-    <string name="bs_official_title">TeamBliss Release Builds</string>
-    <string name="bs_official_summary">Link for stable release builds of BlissStalk</string>
-    <string name="pagapps_title">PA Gapps</string>
-    <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download/install them later</string>
-    <string name="xposed_warning">WARNING</string>
-    <string name="xposed_title">Xposed Installer</string>
-    <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed.</string>
-    <string name="xposed_mod_title">Module Repository</string>
-    <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>          
+    <string name="blissupdate_settings_summary">Check for, view or install updates</string>          
            
 </resources>
