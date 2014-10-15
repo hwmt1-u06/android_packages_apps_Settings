@@ -20,7 +20,7 @@
 	<PreferenceScreen android:key="bs_logo"
                           android:layout="@layout/logo_row" />
 
-        <!-- Bliss Updates -->
+        <!-- LiquidSmooth Updates -->
         <PreferenceScreen android:key="bliss_updates"
                 android:title="@string/blissupdate_settings_title"
                 android:summary="@string/blissupdate_settings_summary">
