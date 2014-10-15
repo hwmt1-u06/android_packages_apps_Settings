@@ -31,7 +31,7 @@
     <string name="header_category_rom_settings">Advanced</string>
 
     <!-- BeanStalk settings screens -->
-    <string name="interface_settings_title">BeanStalk options</string>
+    <string name="interface_settings_title">BlissStalk options</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color picker</string>
@@ -438,7 +438,7 @@
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 
     <!-- TRDS Settings -->
-    <string name="trds_settings_title">Dark stalk</string>
+    <string name="trds_settings_title">Dark Bliss</string>
     <string name="trds_default_color">TRDS default</string>
 
     <!-- Donate to BeanStalk Builds -->
@@ -1899,7 +1899,7 @@
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge.</string>
 
     <!-- Text for forcing expanded notifications -->
-    <string name="disable_fc_notifications_title">Diable FC Notifications</string>
+    <string name="disable_fc_notifications_title">Disable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
 	
     <!-- Toggle switch title for enabling battery saver connections. [CHAR LIMIT=32] -->
