@@ -22,7 +22,7 @@ xmlns:rb="http://schemas.android.com/apk/res/com.android.settings">
                         rb:facebookLink="@string/facebook_beanstalk"
                         rb:githubLink="@string/github_scotthartbti"
             		rb:twitterHandle="scotthartbti"
-                        rb:emailDev="beanstalkbuilds@gmail.com"/>
+                        rb:emailDev="admin@teambliss.x10host.com"/>
 
 	</PreferenceCategory>
 
@@ -36,7 +36,7 @@ xmlns:rb="http://schemas.android.com/apk/res/com.android.settings">
             rb:twitterHandle="scotthartbti"
             rb:donateLink="@string/donate_scotthartbti"
             rb:githubLink="@string/github_scotthartbti"
-	    rb:emailDev="scott.hart.bti@gmail.com"/>
+	    rb:emailDev="admin@teambliss.x10host.com"/>
 
 </PreferenceCategory>
 
@@ -58,7 +58,7 @@ android:title="@string/contributors_title">
             rb:twitterHandle="cyanogenmod"
             rb:donateLink="@string/donate_cyanogenmod"
             rb:githubLink="@string/github_cyanogenmod"
-            rb:emailDev="beanstalkbuilds@gmail.com"/>
+            rb:emailDev="admin@teambliss.x10host.com"/>
 
 </PreferenceCategory>
 
