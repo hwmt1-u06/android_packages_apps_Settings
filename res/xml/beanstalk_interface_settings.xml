@@ -111,5 +111,13 @@
         android:icon="@drawable/ic_settings_omniswitch"
         android:title="@string/omniswitch_settings_title"
         android:fragment="com.android.settings.aicp.OmniSwitch" />	              
+    <!-- BlissStalk Downloads  -->
+    <PreferenceScreen
+        settings:includeXmlForSearch="@xml/download"
+        android:icon="@drawable/ic_menu_save"	    
+        android:key="download_center"
+        android:fragment="com.android.settings.beanstalk.Download"
+        android:title="@string/download_category"
+        android:summary="@string/download_category_summary" />		              
 
 </PreferenceScreen>
