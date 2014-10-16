@@ -883,7 +883,7 @@
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
     <string name="lockscreen_lock_icon_default">Default icon</string>   
     <string name="lockscreen_lock_icon_bs">Bliss Icon #1-White Nexus Atom</string>
-    <string name="lockscreen_lock_icon_bs_one">Bliss Icon #2-Grenn/White Bliss</string>
+    <string name="lockscreen_lock_icon_bs_one">Bliss Icon #2-Green/White Bliss</string>
     <string name="lockscreen_lock_icon_bs_two">Bliss Icon #3-Cyanogen</string>
     <string name="lockscreen_lock_icon_bs_three">Bliss Icon #4-Punisher</string>
     <string name="lockscreen_lock_icon_bs_four">Bliss Icon #5-Android Logo</string>
