@@ -462,7 +462,7 @@
     <string name="donate_aokp">http://aokp.co/</string>
     <string name="google_scotthartbti">https://plus.google.com/u/0/communities/115833651542488654391</string>
     <string name="facebook_beanstalk">http://www.facebook.com/pages/Beanstalk/421499131276932</string>
-    <string name="beanstalk">BeanStalk Build</string>
+    <string name="beanstalk">TeamBliss Build</string>
     <string name="beanstalk_website_title">BeanStalk Blog</string>
     <string name="beanstalk_website_summary">Find latest news and updates about BeanStalk.</string>
     <string name="beanstalk_source_title">Bliss Sources</string>
@@ -509,8 +509,8 @@
 
     <!-- Init.d -->
     <string name="header_summary_init_d">@null</string>
-    <string name="init_d_title">BeanStalk Init.d scripts</string>
-    <string name="app_name">BeanStalk Init.d Conf</string>
+    <string name="init_d_title">Bliss Init.d scripts</string>
+    <string name="app_name">Bliss Init.d Conf</string>
     <string name="pt_general">General</string>
     <string name="pt_zipalign_apks">Zipalign apps</string>
     <string name="ps_zipalign_apks">Zipalign any unaligned apps on each boot</string>
@@ -882,29 +882,17 @@
     <string name="lockscreen_icon_title">Lock handle icon</string>
     <string name="lockscreen_lock_icon_custom">Custom icon</string>
     <string name="lockscreen_lock_icon_default">Default icon</string>   
-    <string name="lockscreen_lock_icon_bs">BeanStalk Icon #1-White Nexus Atom</string>
-    <string name="lockscreen_lock_icon_bs_one">BeanStalk Icon #2-Colored Nexus Atom</string>
-    <string name="lockscreen_lock_icon_bs_two">BeanStalk Icon #3-Cyanogen</string>
-    <string name="lockscreen_lock_icon_bs_three">BeanStalk Icon #4-Punisher</string>
-    <string name="lockscreen_lock_icon_bs_four">BeanStalk Icon #5-Android Logo</string>
-    <string name="lockscreen_lock_icon_bs_five">BeanStalk Icon #6-Fingerprint</string>
-    <string name="lockscreen_lock_icon_bs_six">BeanStalk Icon #6-Fingerprint</string>
-    <string name="lockscreen_lock_icon_bs_seven">BeanStalk Icon #8-CocaCola</string>
-    <string name="lockscreen_lock_icon_bs_eight">BeanStalk Icon #9-Unlock</string>
-    <string name="lockscreen_lock_icon_bs_nine">BeanStalk Icon #10-Skull</string>
-    <string name="lockscreen_lock_icon_bs_ten">BeanStalk Icon #11-HoloXChrome</string> 
-    <string name="lockscreen_lock_icon_bs">Default icon</string>
-    <string name="lockscreen_lock_icon_bs_one">BeanStalk Icon #1-White Nexus Atom</string>
-    <string name="lockscreen_lock_icon_bs_two">BeanStalk Icon #2-Green/White Bliss</string>
-    <string name="lockscreen_lock_icon_bs_three">BeanStalk Icon #3-Cyanogen</string>
-    <string name="lockscreen_lock_icon_bs_four">BeanStalk Icon #4-Punisher</string>
-    <string name="lockscreen_lock_icon_bs_five">BeanStalk Icon #5-Android Logo</string>
-    <string name="lockscreen_lock_icon_bs_six">BeanStalk Icon #6-Fingerprint</string>
-    <string name="lockscreen_lock_icon_bs_seven">BeanStalk Icon #7-Chrome Nexus</string>
-    <string name="lockscreen_lock_icon_bs_eight">BeanStalk Icon #8-CocaCola</string>
-    <string name="lockscreen_lock_icon_bs_nine">BeanStalk Icon #9-Unlock</string>
-    <string name="lockscreen_lock_icon_bs_ten">BeanStalk Icon #10-Skull</string> 
-    <string name="lockscreen_lock_icon_default">BeanStalk Icon #11-HoloXChrome</string> 
+    <string name="lockscreen_lock_icon_bs">Bliss Icon #1-White Nexus Atom</string>
+    <string name="lockscreen_lock_icon_bs_one">Bliss Icon #2-Grenn/White Bliss</string>
+    <string name="lockscreen_lock_icon_bs_two">Bliss Icon #3-Cyanogen</string>
+    <string name="lockscreen_lock_icon_bs_three">Bliss Icon #4-Punisher</string>
+    <string name="lockscreen_lock_icon_bs_four">Bliss Icon #5-Android Logo</string>
+    <string name="lockscreen_lock_icon_bs_five">Bliss Icon #6-Fingerprint</string>
+    <string name="lockscreen_lock_icon_bs_six">Bliss Icon #6-Fingerprint</string>
+    <string name="lockscreen_lock_icon_bs_seven">Bliss Icon #8-CocaCola</string>
+    <string name="lockscreen_lock_icon_bs_eight">Bliss Icon #9-Unlock</string>
+    <string name="lockscreen_lock_icon_bs_nine">Bliss Icon #10-Skull</string>
+    <string name="lockscreen_lock_icon_bs_ten">Bliss Icon #11-HoloXChrome</string> 
     <string name="lockscreen_colorize_handle_title">Colorize custom handle</string>
     <string name="lockscreen_colorize_handle_summary">Lock color will be set to the lock handle</string>
     <string name="lockscreen_style_title">Theme style</string>
@@ -937,7 +925,7 @@
 
     <!-- Init.d Settings : Warning dialog -->
     <string name="init_warning_title">Please Read First</string>
-    <string name="init_warning">The BeanStalk Init.d scripts have been added to this build for experimental purposes only.  While some people may see improved performance on certain phones, there is always the possibility that some phones may not benefit from the scripts and you may actually see a negative impact.  The ideal situation is to find the right combination of scripts that provides the best bang for your buck while keeping a certain level of stability.</string>
+    <string name="init_warning">The Bliss Init.d scripts have been added to this build for experimental purposes only.  While some people may see improved performance on certain phones, there is always the possibility that some phones may not benefit from the scripts and you may actually see a negative impact.  The ideal situation is to find the right combination of scripts that provides the best bang for your buck while keeping a certain level of stability.</string>
 
     <!-- Basic Numbers -->
     <string name="two">Two</string>
@@ -1745,7 +1733,7 @@
     <string name="pa_pie_restart_launcher_summary">Changing screensize can have adverse effects. This option allows your launcher to regain sanity, the cost is a slight blackout (recommended)</string>
 
     <!-- BeanStalk Shortcuts -->
-    <string name="slim_shortcut_picker">BeanStalk Actions</string>
+    <string name="slim_shortcut_picker">Bliss Actions</string>
 
     <!-- Volume steps and panel timeout -->
     <string name="volume_steps_title">Volume steps</string>
