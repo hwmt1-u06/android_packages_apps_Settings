@@ -69,12 +69,12 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mBSGapps) {
-            Uri uri = Uri.parse("http://teambliss.x10host.com/BlissStalk/Gapps/");
+            Uri uri = Uri.parse("teambliss.x10host.com/BlissStalk/Gapps/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
         } else if (preference == mPAGapps) {
-            Uri uri = Uri.parse("http://goo.gl/CPwXdX");
+            Uri uri = Uri.parse("https://www.androidfilehost.com/?w=files&flid=15797");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
@@ -89,7 +89,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             startActivity(intent);
             return true;
         } else if (preference == mBSOfficial) {
-            Uri uri = Uri.parse("http://teambliss.x10host.com/BlissStalk/Devices/");
+            Uri uri = Uri.parse("teambliss.x10host.com/BlissStalk/Devices/");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
