@@ -57,6 +57,10 @@
     <Preference
         android:key="xposed"
         android:title="@string/xposed_title" />
+        
+    <Preference
+        android:key="xposeddpi"
+        android:title="@string/xposed_dpi_title" />        
 
     <Preference
         android:key="xposed_mod"

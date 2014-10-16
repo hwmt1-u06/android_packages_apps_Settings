@@ -44,6 +44,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
     Preference mBSOfficial;
     Preference mPAGapps;
     Preference mXposed;
+    Preference mXposeddpi;
     Preference mXposedMod;
 
     @Override
@@ -58,6 +59,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
         mBSOfficial = findPreference("bs_official");
         mPAGapps = findPreference("pa_gapps");
         mXposed = findPreference("xposed");
+        mXposeddpi = findPreference("xposeddpi");        
         mXposedMod = findPreference("xposed_mod");
     }
 
@@ -79,10 +81,15 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             startActivity(intent);
             return true;
         } else if (preference == mXposed) {
-            Uri uri = Uri.parse("http://goo.gl/Mp0dTP");
+            Uri uri = Uri.parse("http://teambliss.x10host.com/BlissStalk/Other Downloads/xposed_installer.apk");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
+        } else if (preference == mXposeddpi) {
+            Uri uri = Uri.parse("http://teambliss.x10host.com/BlissStalk/Other Downloads/appsetting.apk");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;            
         } else if (preference == mXposedMod) {
             Uri uri = Uri.parse("http://goo.gl/5J860t");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);

@@ -96,14 +96,6 @@
         android:fragment="com.android.settings.beanstalk.MiscSettings"
         android:title="@string/misc_settings_title" />
         
-    <PreferenceScreen
-        android:icon="@drawable/ic_settings_system"
-        settings:includeXmlForSearch="@xml/xposed_mods"
-        android:key="xposed_mods"
-        android:fragment="com.android.settings.beanstalk.XposedMods"
-        android:title="@string/xposed_mods_title" 
-        android:summary="@string/xposed_mods_summary" />
-	
     <!-- OmniSwitch -->
     <PreferenceScreen
         android:key="omniswitch"
