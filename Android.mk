@@ -21,6 +21,10 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 
+LOCAL_AAPT_FLAGS += --auto-add-overlay
+
+LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res $(LOCAL_PATH)/../../../external/koush/Widgets/Widgets/res
+
 LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
 
 include $(BUILD_PACKAGE)
