@@ -2303,6 +2303,10 @@
     <string name="xposed_dpi_title">Xposed App Settings</string>    
     <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed.</string>
     <string name="xposed_mod_title">Module Repository</string>
-    <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>          
+    <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
+  
+    <!--Eqalizer-->
+    <string name="equalizer_settings_title">Equalizer</string>
+    <string name="equalizer_summary">ViPER4Android Access</string>                   
            
 </resources>
