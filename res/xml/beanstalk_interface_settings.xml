@@ -11,6 +11,18 @@
         android:key="advanced_controls"
         android:fragment="com.android.settings.beanstalk.AdvancedControls"
         android:title="@string/advanced_controls_title" />
+	
+    <!-- Equalizer -->
+    <PreferenceScreen
+        android:id="@+id/equalizer_settings"
+        android:title="@string/equalizer_settings_title"
+        android:summary="@string/equalizer_summary"       
+        android:icon="@drawable/ic_bliss_equalizer" >
+        <intent
+           android:action="android.intent.action.MAIN"
+           android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+           android:targetPackage="com.vipercn.viper4android_v2" />
+     </PreferenceScreen>	
 
     <PreferenceScreen
         android:icon="@drawable/ic_settings_teloradio"    
@@ -55,7 +67,7 @@
     </PreferenceScreen>
 
     <PreferenceScreen
-        android:icon="@drawable/ic_settings_home"    
+        android:icon="@drawable/ic_bliss_navigation"    
         settings:includeXmlForSearch="@xml/navbar_settings"    
         android:key="navbar_settings"
         android:fragment="com.android.settings.beanstalk.NavbarSettings"
