@@ -442,13 +442,13 @@
     <string name="trds_default_color">TRDS default</string>
 
     <!-- Donate to BlissStalk Builds -->
-    <string name="donate_beanstalk_title">Support BlissStalk</string>
-    <string name="donate_beanstalk_summary">Donate to TeamBliss</string>
+    <string name="donate_beanstalk_title">Support Bliss Stalk</string>
+    <string name="donate_beanstalk_summary">Donate to Team Bliss</string>
     <string name="donate_link" formatted="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8PH9QFPHVDBAG</string>
 
     <!-- About BlissStalk -->
-    <string name="about_beanstalk_settings_title">About TeamBliss</string>
-    <string name="about_beanstalk">About TeamBliss</string>
+    <string name="about_beanstalk_settings_title">About Team Bliss</string>
+    <string name="about_beanstalk">About Team Bliss</string>
     <string name="about_beanstalk_summary">@null</string>
     <string name="app_name">BeanStalk</string>
     <string name="devs">Developer</string>
@@ -457,7 +457,7 @@
     <string name="github_aokp">https://github.com/AOKP</string> 
     <string name="donate_scotthartbti">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=8PH9QFPHVDBAG</string>
      <string name="beanstalk_site_title">TeamBliss website</string>
-     <string name="beanstalk_site_summary">Visit the TeamBliss Website for Latest News and Downloads.</string>
+     <string name="beanstalk_site_summary">Visit the Team Bliss Website for Latest News and Downloads.</string>
     <string name="donate_cyanogenmod">http://forum.cyanogenmod.com/donate</string>
     <string name="donate_aokp">http://aokp.co/</string>
     <string name="google_scotthartbti">https://plus.google.com/u/0/communities/115833651542488654391</string>
@@ -466,12 +466,12 @@
     <string name="beanstalk_website_title">BeanStalk Blog</string>
     <string name="beanstalk_website_summary">Find latest news and updates about BeanStalk.</string>
     <string name="beanstalk_source_title">Bliss Sources</string>
-    <string name="beanstalk_source_summary">TeamBliss source can be found at www.github.com/TeamBliss</string>
+    <string name="beanstalk_source_summary">Team Bliss source can be found at www.github.com/TeamBliss</string>
     <string name="beanstalk_irc_title">Join me on IRC</string>
     <string name="beanstalk_irc_summary">#aokp-sgs2 @ irc.freenode.net</string>
     <string name="beanstalk_facebook_title">Facebook Page</string>
     <string name="beanstalk_facebook_summary">Subscribe to BeanStalk Facebook page for updates.</string>
-    <string name="title_about">About TeamBliss</string>
+    <string name="title_about">About Team Bliss</string>
 
     <!-- Wi-Fi region code settings-->
     <string name="wifi_setting_countrycode_title">Wi-Fi region code</string>
@@ -2283,7 +2283,7 @@
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>        
     <!-- BlissStalk Updater -->
-    <string name="blissupdate_settings_title">BlissStalk Updates</string>
+    <string name="blissupdate_settings_title">Bliss Stalk Updates</string>
     <string name="blissupdate_settings_summary">Check for, view or install updates</string>    
     
     <!-- Download Center -->
@@ -2293,9 +2293,9 @@
     <string name="gapps_category">GAPPS Packages</string>
     <string name="xposed_category">Xposed Framework</string>
     <string name="bsgapps_title">Bliss Gapps</string>
-    <string name="bsgapps_summary">Bliss Gapps are generally recommended gapps for use on BlissStalk</string>
-    <string name="bs_official_title">TeamBliss Release Builds</string>
-    <string name="bs_official_summary">Link for stable release builds of BlissStalk</string>
+    <string name="bsgapps_summary">Bliss Gapps are generally recommended gapps for use on Bliss Stalk</string>
+    <string name="bs_official_title">Team Bliss Release Builds</string>
+    <string name="bs_official_summary">Link for stable release builds of Bliss Stalk</string>
     <string name="pagapps_title">PA Gapps</string>
     <string name="pagapps_summary">Fully packed with the majority of GAPPS, these are commonly used by users that do not want to download/install them later</string>
     <string name="xposed_warning">WARNING</string>
@@ -2312,6 +2312,16 @@
   
     <!--Eqalizer-->
     <string name="equalizer_settings_title">Equalizer</string>
-    <string name="equalizer_summary">ViPER4Android Access</string>                   
+    <string name="equalizer_summary">ViPER4Android Access</string>
+    
+    <!-- Bliss Extra Info -->
+    <string name="blissextrainfo">Extra information</string>
+    <string name="blissextrainfo_summary">Display extra info for cpu, display, etc</string> 
+    
+    <!-- Share Bliss Rom -->
+    <string name="share_bliss_title">Share Bliss Stalk Rom</string>
+    <string name="share_bliss_summary">Let others know about Bliss Stalk</string>
+    <string name="share_message">Check out what Team Bliss is all about @ http://www.teambliss.x10host.com</string>
+    <string name="share_chooser_title">Share Team Bliss Roms</string>                          
            
 </resources>
