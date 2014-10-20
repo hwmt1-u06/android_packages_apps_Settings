@@ -74,7 +74,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_MOD_VERSION = "mod_version";
-    private static final String KEY_DU_SHARE = "share";
+    private static final String KEY_BLISS_SHARE = "share";
     private static final String KEY_BLISS_UPDATES = "bliss_updates";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
@@ -260,7 +260,7 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(getActivity().getString(R.string.donate_link)));
             startActivity(browserIntent);
-        } else if (preference.getKey().equals(KEY_DU_SHARE)) {
+        } else if (preference.getKey().equals(KEY_BLISS_SHARE)) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
         intent.setType("text/plain");
@@ -412,5 +412,4 @@ public class DeviceInfoSettings extends RestrictedSettingsFragment {
         }
         return false;
     }
- public static class AboutActivity extends DeviceInfoSettings { /* empty */ }	
 }
