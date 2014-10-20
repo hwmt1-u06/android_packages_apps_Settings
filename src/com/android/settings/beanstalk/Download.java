@@ -42,6 +42,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
     Preference mBSGapps;
     Preference mBSOfficial;
+    Preference mSuperSu;    
     Preference mPAGapps;
     Preference mXposed;
     Preference mXposeddpi;
@@ -58,6 +59,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
 
         mBSGapps = findPreference("bs_gapps");
         mBSOfficial = findPreference("bs_official");
+        mSuperSu = findPreference("supersu");        
         mPAGapps = findPreference("pa_gapps");
         mXposed = findPreference("xposed");
         mXposeddpi = findPreference("xposeddpi");
@@ -107,6 +109,11 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;
+        } else if (preference == mSuperSu) {
+            Uri uri = Uri.parse("http://teambliss.x10host.com/BlissStalk/Other Downloads/UPDATE-SuperSU-v2.14.zip");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;            
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

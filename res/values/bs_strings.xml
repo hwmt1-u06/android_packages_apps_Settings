@@ -2306,6 +2306,9 @@
     <string name="xposed_summary">While Xposed is proven to be a very useful tool, some modules may cause issues/bugs in custom ROMs. Please uninstall all modules before reporting any bugs that you may come across while using Xposed.</string>
     <string name="xposed_mod_title">Module Repository</string>
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
+    <string name="su_category">SuperSu Download</string>    
+    <string name="supersu_title">ChainFires SuperSu</string>
+    <string name="supersu_summary">v2.14 Stable-Download and Flash in Recovery</string>    
   
     <!--Eqalizer-->
     <string name="equalizer_settings_title">Equalizer</string>
