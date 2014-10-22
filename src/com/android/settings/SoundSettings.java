@@ -78,7 +78,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VIBRATE = "vibrate_when_ringing";
     private static final String KEY_RING_VOLUME = "ring_volume";
     private static final String KEY_INCREASING_RING = "increasing_ring";
-    private static final String KEY_MUSICFX = "musicfx";
     private static final String KEY_DTMF_TONE = Settings.System.DTMF_TONE_WHEN_DIALING;
     private static final String KEY_SOUND_EFFECTS = Settings.System.SOUND_EFFECTS_ENABLED;
     private static final String KEY_HAPTIC_FEEDBACK = Settings.System.HAPTIC_FEEDBACK_ENABLED;
@@ -133,7 +132,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mSoundEffects;
     private ListPreference mCameraSounds;
     private ListPreference mVibrationMultiplier;	
-    private Preference mMusicFx;
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
     private PreferenceScreen mQuietHours;
@@ -191,8 +189,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-		mVib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
+        mVib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         addPreferencesFromResource(R.xml.sound_settings);
 
         if (TelephonyManager.PHONE_TYPE_CDMA != activePhoneType) {
@@ -285,17 +282,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         }
 
         mSoundSettings = (PreferenceGroup) findPreference(KEY_SOUND_SETTINGS);
-
-        mMusicFx = mSoundSettings.findPreference(KEY_MUSICFX);
-        Intent i = new Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL);
-        mMusicFx.setIntent(i);
-        PackageManager p = getPackageManager();
-        List<ResolveInfo> ris = p.queryIntentActivities(i, 0);
-        if (ris.size() == 0) {
-            mSoundSettings.removePreference(mMusicFx);
-        } else if (ris.size() == 1) {
-            mMusicFx.setSummary(ris.get(0).loadLabel(p));
-        }
 
         if (!Utils.isVoiceCapable(getActivity())) {
             for (String prefKey : NEED_VOICE_CAPABILITY) {
@@ -469,9 +455,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             } else {
                 mAudioManager.unloadSoundEffects();
             }
-        } else if (preference == mMusicFx) {
-            // let the framework fire off the intent
-            return false;
 	} else if (preference == mDisableBootAudio) {
 	    boolean checked = ((CheckBoxPreference) preference).isChecked();
 	    if (checked) {
