@@ -1816,8 +1816,6 @@
         <activity android:name=".cyanogenmod.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
-		
-        <activity android:name=".bliss.Download" />		
 
         <activity android:name=".voicewakeup.VoiceWakeupSettings" />
         <activity android:name="Settings$VoiceWakeupSettingsActivity"

@@ -2282,6 +2282,7 @@
     
     <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
     <string name="supersu_title">SuperSU</string>        
+<<<<<<< HEAD
     <!-- BlissStalk Updater -->
     <string name="blissupdate_settings_title">Bliss Stalk Updates</string>
     <string name="blissupdate_settings_summary">Check for, view or install updates</string>    
@@ -2326,5 +2327,7 @@
     
     <!-- Vibration multiplier -->
     <string name="vibrator_multiplier_title">Vibration multiplier</string>                              
+=======
+>>>>>>> parent of 3df354b... Add Download section
            
 </resources>
