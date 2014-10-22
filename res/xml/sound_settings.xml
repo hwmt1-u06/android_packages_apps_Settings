@@ -73,11 +73,6 @@
             android:fragment="com.android.settings.beanstalk.QuietHours"
             android:title="@string/quiet_hours_title" />
 
-    <!-- DSP Manager -->
-    <Preference
-            android:key="musicfx"
-            android:title="@string/musicfx_title" />
-
     <PreferenceCategory
             android:key="category_calls_and_notification"
             android:title="@string/sound_category_call_ringtone_vibrate_title"/>
