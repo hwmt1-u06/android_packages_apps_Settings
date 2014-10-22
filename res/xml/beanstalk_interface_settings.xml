@@ -92,7 +92,6 @@
         android:title="@string/misc_settings_title" />
         
     <PreferenceScreen
-<<<<<<< HEAD
         android:icon="@drawable/ic_rom_control_init"    
         settings:includeXmlForSearch="@xml/init_d" 
         android:id="@+id/initD"
@@ -108,21 +107,5 @@
         android:fragment="com.android.settings.beanstalk.Download"
         android:title="@string/download_category"
         android:summary="@string/download_category_summary" />		              
-=======
-        android:icon="@drawable/ic_settings_system"
-        settings:includeXmlForSearch="@xml/xposed_mods"
-        android:key="xposed_mods"
-        android:fragment="com.android.settings.beanstalk.XposedMods"
-        android:title="@string/xposed_mods_title" 
-        android:summary="@string/xposed_mods_summary" />
-	
-    <!-- OmniSwitch -->
-    <PreferenceScreen
-        android:key="omniswitch"
-        android:id="@+id/omniswitch"
-        android:icon="@drawable/ic_settings_omniswitch"
-        android:title="@string/omniswitch_settings_title"
-        android:fragment="com.android.settings.aicp.OmniSwitch" />	              
->>>>>>> parent of 3df354b... Add Download section
 
 </PreferenceScreen>
