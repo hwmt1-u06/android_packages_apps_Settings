@@ -17,7 +17,6 @@
 package com.android.settings;
 
 import com.android.settings.bluetooth.DockEventReceiver;
-import com.android.settings.hardware.VibratorIntensity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -83,7 +82,8 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DTMF_TONE = Settings.System.DTMF_TONE_WHEN_DIALING;
     private static final String KEY_SOUND_EFFECTS = Settings.System.SOUND_EFFECTS_ENABLED;
     private static final String KEY_HAPTIC_FEEDBACK = Settings.System.HAPTIC_FEEDBACK_ENABLED;
-    private static final String KEY_VIBRATION_INTENSITY = "vibration_intensity";
+    private static final String KEY_VIBRATION_DURATION = "vibration_duration";
+    private static final String KEY_VIBRATION_MULTIPLIER = "vibrator_multiplier";
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
     private static final String KEY_SOUND_SETTINGS = "sound_settings";
     private static final String KEY_LOCK_SOUNDS = Settings.System.LOCKSCREEN_SOUNDS_ENABLED;
@@ -102,7 +102,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds_enabled";
     private static final String KEY_CAMERA_SOUNDS = "camera_click_sound";
     private static final String PROP_CAMERA_SOUND = "persist.sys.camera-sound";
-    private static final String KEY_VIBRATION_DURATION = "vibration_duration";
     private static final String KEY_VOLUME_PANEL_TIMEOUT = "volume_panel_timeout";
     private static final String DISABLE_BOOTAUDIO = "disable_bootaudio";
 
@@ -133,6 +132,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private ListPreference mRingMode;
     private CheckBoxPreference mSoundEffects;
     private ListPreference mCameraSounds;
+    private ListPreference mVibrationMultiplier;	
     private Preference mMusicFx;
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
@@ -259,9 +259,22 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVibrationDuration.isMilliseconds(true);
         mVibrationDuration.setInitValue(userMillis);
         mVibrationDuration.setOnPreferenceChangeListener(this);
-	
+
+        mVibrationMultiplier = (ListPreference) findPreference(KEY_VIBRATION_MULTIPLIER);
+        String currentValue = Float.toString(Settings.System.getFloat(getActivity()
+                .getContentResolver(), Settings.System.VIBRATION_MULTIPLIER, 1));
+        mVibrationMultiplier.setValue(currentValue);
+        mVibrationMultiplier.setSummary(currentValue);
+        mVibrationMultiplier.setOnPreferenceChangeListener(this);
+
         mRingtonePreference = findPreference(KEY_RINGTONE);
         mNotificationPreference = findPreference(KEY_NOTIFICATION_SOUND);
+
+        if (mVib == null || !mVib.hasVibrator()) {
+            removePreference(KEY_VIBRATE);
+            removePreference(KEY_HAPTIC_FEEDBACK);
+            removePreference(KEY_VIBRATION_DURATION);
+        }
 
         if (TelephonyManager.PHONE_TYPE_CDMA == activePhoneType) {
             ListPreference emergencyTonePreference =
@@ -350,19 +363,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             }
         }
 
-        if (mVib == null || !mVib.hasVibrator()) {
-            removePreference(KEY_VIBRATE);
-            removePreference(KEY_HAPTIC_FEEDBACK);
-	    removePreference(KEY_VIBRATION_INTENSITY);
-            removePreference(KEY_CONVERT_SOUND_TO_VIBRATE);
-            removePreference(KEY_VIBRATE_DURING_CALLS);
-	    removePreference(KEY_VIBRATION_DURATION);
-	    removePreference(KEY_POWER_NOTIFICATIONS_VIBRATE);
-        } else if (!VibratorIntensity.isSupported()) {
-            removePreference(KEY_VIBRATION_INTENSITY);
-        }
-
-        initDockSettings();
+         initDockSettings();
     }
 
     @Override
@@ -567,6 +568,12 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 mVib.vibrate(1);
             }
             mFirstVibration = true;
+        } else if (preference == mVibrationMultiplier) {
+            String currentValue = (String) objValue;
+            float val = Float.parseFloat(currentValue);
+            Settings.System.putFloat(getActivity().getContentResolver(),
+                    Settings.System.VIBRATION_MULTIPLIER, val);
+            mVibrationMultiplier.setSummary(currentValue);			
         } else if (preference == mCameraSounds) {
             final int value = Integer.valueOf((String)objValue);
             final int index = mCameraSounds.findIndexOfValue((String) objValue);

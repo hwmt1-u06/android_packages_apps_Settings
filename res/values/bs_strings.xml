@@ -2322,6 +2322,9 @@
     <string name="share_bliss_title">Share Bliss Stalk Rom</string>
     <string name="share_bliss_summary">Let others know about Bliss Stalk</string>
     <string name="share_message">Check out what Team Bliss is all about @ http://www.teambliss.x10host.com</string>
-    <string name="share_chooser_title">Share Team Bliss Roms</string>                          
+    <string name="share_chooser_title">Share Team Bliss Roms</string>
+    
+    <!-- Vibration multiplier -->
+    <string name="vibrator_multiplier_title">Vibration multiplier</string>                              
            
 </resources>
