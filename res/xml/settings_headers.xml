@@ -91,8 +91,9 @@
 
     <!-- TRDS -->
     <header
+            settings:includeXmlForSearch="@xml/bliss_theme_settings"
         android:id="@+id/theme_settings"
-        android:fragment="com.android.settings.slim.themes.ThemeSettings"
+        android:fragment="com.android.settings.bliss.themes.ThemeSettings"
         android:icon="@drawable/ic_settings_theme"
         android:title="@string/theme_settings_title" />
 

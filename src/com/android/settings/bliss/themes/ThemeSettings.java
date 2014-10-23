@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim.themes;
+package com.android.settings.bliss.themes;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -52,7 +52,7 @@ public class ThemeSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.theme_settings);
+        addPreferencesFromResource(R.xml.bliss_theme_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
