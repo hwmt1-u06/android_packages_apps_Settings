@@ -14,10 +14,6 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.hardware.DisplayColor;
 import com.android.settings.hardware.DisplayGamma;
-<<<<<<< HEAD
-=======
-import com.android.settings.hardware.VibratorIntensity;
->>>>>>> parent of 2494fa1... Revert "Sorry deleted wrong folder."
 import com.android.settings.location.LocationSettings;
 import com.android.settings.beanstalk.service.QuietHoursController;
 
@@ -44,10 +40,6 @@ public class BootReceiver extends BroadcastReceiver {
         /* Restore hardware tunable values */
         DisplayColor.restore(ctx);
         DisplayGamma.restore(ctx);
-<<<<<<< HEAD
-=======
-        VibratorIntensity.restore(ctx);
->>>>>>> parent of 2494fa1... Revert "Sorry deleted wrong folder."
         DisplaySettings.restore(ctx);
         LocationSettings.restore(ctx);
     }
