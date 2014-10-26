@@ -110,7 +110,7 @@ public class Download extends SettingsPreferenceFragment implements OnPreference
             startActivity(intent);
             return true;
         } else if (preference == mSuperSu) {
-            Uri uri = Uri.parse("http://teambliss.x10host.com/BlissStalk/Other Downloads/UPDATE-SuperSU-v2.14.zip");
+            Uri uri = Uri.parse("http://teambliss.x10host.com/BlissStalk/Other Downloads/UPDATE-SuperSU-v2.16.zip");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             return true;            
