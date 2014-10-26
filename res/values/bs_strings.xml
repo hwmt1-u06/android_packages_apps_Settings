@@ -2308,7 +2308,7 @@
     <string name="xposed_mod_summary">Browse and install modules to be used with Xposed Framework</string>
     <string name="su_category">SuperSu Download</string>    
     <string name="supersu_title">ChainFires SuperSu</string>
-    <string name="supersu_summary">v2.14 Stable-Download and Flash in Recovery</string>    
+    <string name="supersu_summary">v2.16 Stable-Download and Flash in Recovery</string>    
   
     <!--Eqalizer-->
     <string name="equalizer_settings_title">Equalizer</string>
