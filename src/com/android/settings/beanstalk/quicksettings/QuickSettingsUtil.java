@@ -199,10 +199,10 @@ public class QuickSettingsUtil {
                 TILE_SHAKE, R.string.title_tile_shake,
                 "com.android.systemui:drawable/ic_qs_shake_events"));
         registerTile(new QuickSettingsUtil.TileInfo(
-                TILE_CPUFREQ, R.string.title_tile_profile,
+                TILE_PROFILE, R.string.title_tile_profile,
                 "com.android.systemui:drawable/ic_qs_profiles"));
         registerTile(new QuickSettingsUtil.TileInfo(
-                TILE_PROFILE, R.string.title_tile_cpufreq,
+                TILE_CPUFREQ, R.string.title_tile_cpufreq,
                 "com.android.systemui:drawable/ic_qs_cpufreq"));        				
 	    registerTile(new QuickSettingsUtil.TileInfo(
 		        TILE_NETWORKADB, R.string.title_tile_network_adb,
