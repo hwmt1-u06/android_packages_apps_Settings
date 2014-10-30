@@ -301,13 +301,13 @@ public class LockscreenStyle extends SettingsPreferenceFragment
                 deleteLockIcon();
                 resizeBsLockten();
                 updateLockSummary();
-			} else if (indexOf == 13) {
+	    } else if (indexOf == 13) {
                 deleteLockIcon();
-                resizeBsLockten();
+                resizeBsLockeleven();
                 updateLockSummary();
-			} else if (indexOf == 14) {
+	    } else if (indexOf == 14) {
                 deleteLockIcon();
-                resizeBsLockten();
+                resizeBsLocktwelve();
                 updateLockSummary();	
             } else if (indexOf == 1) {
                 deleteLockIcon();
