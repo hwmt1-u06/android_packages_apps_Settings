@@ -46,6 +46,7 @@ import android.os.Vibrator;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.MediaStore;
@@ -138,6 +139,9 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mPowerSoundsVibrate;
     private MSimTelephonyManager mSimTelephonyManager;
     private Preference mPowerSoundsRingtone;
+
+    private Preference mDolbyMobileSettings;
+    private PreferenceCategory mDolbyMobileSettingsCategory;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -251,6 +255,17 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             mSoundSettings.removePreference(mMusicFx);
         } else if (ris.size() == 1) {
             mMusicFx.setSummary(ris.get(0).loadLabel(p));
+        }
+
+        mDolbyMobileSettingsCategory = (PreferenceCategory)findPreference("dolby_mobile_settings_category");
+        mDolbyMobileSettings = findPreference("dolby_mobile_settings");
+        Intent dolbyIntent = new Intent("com.huawei.android.globaldolbyeffect.GlobalDolbyEffectActivity");
+        List<ResolveInfo> homes = getPackageManager().queryIntentActivities(dolbyIntent, 0);
+        if((homes == null) || (homes.size() == 0)) {
+            if((mDolbyMobileSettingsCategory != null) && (mDolbyMobileSettings != null)) {
+                getPreferenceScreen().removePreference(mDolbyMobileSettingsCategory);
+                getPreferenceScreen().removePreference(mDolbyMobileSettings);
+            }
         }
 
         if (!Utils.isVoiceCapable(getActivity())) {

@@ -1413,4 +1413,5 @@ public class Settings extends PreferenceActivity
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
     public static class WifiApSettingsActivity extends Settings { /* empty */ }
     public static class LockscreenInterfaceActivity extends Settings { /* empty */ }
+    public static class GlobalDolbyEffectActivity extends Settings { /* empty */ }
 }
