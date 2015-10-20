@@ -1466,8 +1466,4 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_to_cyanogen_disable_msg">Disabling this feature will allow unauthorized users to reset your phone to factory defaults if it is stolen. Your personal data may not be protected. Do you want to disable this feature?</string>
     <string name="lock_to_cyanogen_master_clear_warning">Device Protection is enabled. Please disable to continue resetting your device.</string>
 
-    <!-- Dolby Digital Plus -->
-    <string name="dolby_digital_plus_settings_title">Settings Dolby Mobile</string>
-    <string name="dolby_mobile_settings_title">Dolby Digital Plus</string>
-
 </resources>
